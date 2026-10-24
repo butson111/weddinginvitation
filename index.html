@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f6f3">
+
+  <title>Jayson &amp; Zenia | March 6, 2027</title>
+  <meta name="description"
+        content="Join Jayson and Zenia as they celebrate their wedding on March 6, 2027.">
+
+  <!-- Google Fonts. Optional: replace with your preferred fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ==========================================
+       NAVIGATION
+       ========================================== -->
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Jayson and Zenia home">
+        J <span>&amp;</span> Z
+      </a>
+
+      <button class="menu-toggle"
+              id="menuToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#details">Wedding Details</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#dress-code">Dress Code</a></li>
+        <li><a href="#wedding-party">Wedding Party</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#rsvp" class="nav-rsvp">RSVP <span>↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ==========================================
+         1. HERO SECTION
+         ========================================== -->
+    <section class="hero" id="home">
+      <!-- Replace the background-image URL in style.css with your photo. -->
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container">
+        <p class="eyebrow hero-eyebrow">TOGETHER WITH OUR FAMILIES</p>
+
+        <h1>Jayson <span class="ampersand">&amp;</span> Zenia</h1>
+
+        <p class="hero-tagline">
+          Two lives, two hearts, joined together in friendship,
+          united forever in love.
+        </p>
+
+        <div class="hero-divider" aria-hidden="true"></div>
+
+        <p class="hero-date">MARCH 06, 2027</p>
+
+        <a href="#details" class="button button-light">
+          CELEBRATE WITH US <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>OUR WEDDING DAY</span>
+        <span>06 . 03 . 27</span>
+      </div>
+    </section>
+
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section section-padding"
+             aria-label="Countdown to our wedding">
+      <div class="container countdown-inner">
+        <p class="eyebrow">THE COUNTDOWN BEGINS</p>
+        <h2 class="section-heading">Until we say "I do"</h2>
+
+        <div class="countdown" id="countdown" aria-live="off">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">000</span>
+            <span class="countdown-label">DAYS</span>
+          </div>
+          <span class="countdown-colon" aria-hidden="true">:</span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">HOURS</span>
+          </div>
+          <span class="countdown-colon" aria-hidden="true">:</span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">MINUTES</span>
+          </div>
+          <span class="countdown-colon" aria-hidden="true">:</span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">SECONDS</span>
+          </div>
+        </div>
+
+        <p class="countdown-note" id="countdownMessage">
+          Every second brings us closer to forever.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         2. OUR STORY
+         ========================================== -->
+    <section class="story-section section-padding" id="story">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">A LITTLE BIT OF FOREVER</p>
+          <h2 class="section-heading">How It All Began</h2>
+          <p class="section-description">
+            And somehow, it became forever. Read the story of how
+            two hearts found their way to each other.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-image image-frame">
+            <!-- Replace with your chat screenshot or couple photo. -->
+            <img
+              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+              alt="A couple sharing a romantic moment"
+              loading="lazy">
+            <span class="image-caption">OUR LITTLE LOVE STORY</span>
+          </div>
+
+          <div class="story-copy">
+            <span class="story-number">01 / OUR BEGINNING</span>
+            <h3>From a simple hello<br>to a lifetime together.</h3>
+            <p>
+              Sometimes, the most beautiful stories begin in the
+              simplest ways. One conversation turned into countless
+              memories, laughter, dreams, and a love we never want
+              to stop choosing.
+            </p>
+            <p>
+              Now, we are ready to begin our next chapter, surrounded
+              by the people who have been part of our journey.
+            </p>
+
+            <button type="button"
+                    class="button button-dark"
+                    id="openStory">
+              VIEW OUR STORY <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- STORY MODAL -->
+    <dialog class="story-dialog" id="storyDialog"
+            aria-labelledby="storyDialogTitle">
+      <div class="dialog-content">
+        <button class="dialog-close"
+                id="closeStory"
+                type="button"
+                aria-label="Close our story">×</button>
+
+        <p class="eyebrow">CHAPTER ONE, TWO, AND FOREVER</p>
+        <h2 id="storyDialogTitle">Our Story</h2>
+
+        <!-- Replace this sample with your real backstory. -->
+        <div class="full-story">
+          <p>
+            Every love story has a beginning. Ours started with a
+            simple moment that neither of us knew would lead us here.
+          </p>
+          <p>
+            As the days passed, ordinary conversations became our
+            favorite part of the day. Little by little, we discovered
+            the comfort of being understood, the joy of laughing
+            together, and the beauty of growing side by side.
+          </p>
+          <p>
+            We have shared dreams, learned from challenges, and
+            created memories that will always be ours. Through every
+            season, we kept choosing each other.
+          </p>
+          <p>
+            On March 6, 2027, we will begin a new chapter as husband
+            and wife. We cannot wait to celebrate the love that brought
+            us here with the people who mean the most to us.
+          </p>
+          <p class="story-signoff">With love, Jayson &amp; Zenia</p>
+        </div>
+      </div>
+    </dialog>
+
+
+    <!-- ==========================================
+         3. WEDDING DETAILS
+         ========================================== -->
+    <section class="details-section section-padding" id="details">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">SAVE THE DATE</p>
+          <h2 class="section-heading">The Wedding Details</h2>
+          <p class="section-description">
+            Two special places, one unforgettable day.
+            We can't wait to celebrate with you.
+          </p>
+        </div>
+
+        <div class="venue-grid">
+
+          <!-- CEREMONY CARD -->
+          <article class="venue-card">
+            <div class="venue-image">
+              <!-- Replace with a ceremony venue photo. -->
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                alt="Elegant wedding ceremony setting"
+                loading="lazy">
+              <span class="venue-image-label">01 — THE CEREMONY</span>
+            </div>
+
+            <div class="venue-content">
+              <p class="eyebrow">THE BEGINNING OF FOREVER</p>
+              <h3>[Insert Church / Ceremony Venue Name]</h3>
+
+              <p class="venue-address">
+                [Insert complete street address]<br>
+                [City, Province, Postal Code]
+              </p>
+
+              <p class="venue-time">
+                <span>DATE</span> March 6, 2027
+                <br>
+                <span>TIME</span> [Insert ceremony time]
+              </p>
+
+              <!-- Replace # with the exact Google Maps link. -->
+              <a class="button button-outline"
+                 href="https://www.google.com/maps/search/?api=1&amp;query=YOUR+CEREMONY+VENUE"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                VIEW ON GOOGLE MAPS ↗
+              </a>
+            </div>
+          </article>
+
+
+          <!-- RECEPTION CARD -->
+          <article class="venue-card">
+            <div class="venue-image">
+              <!-- Replace with a reception venue photo. -->
+              <img
+                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                alt="Wedding reception venue decorated for a celebration"
+                loading="lazy">
+              <span class="venue-image-label">02 — THE RECEPTION</span>
+            </div>
+
+            <div class="venue-content">
+              <p class="eyebrow">LET THE CELEBRATION BEGIN</p>
+              <h3>[Insert Reception Hall Name]</h3>
+
+              <p class="venue-address">
+                [Insert complete street address]<br>
+                [City, Province, Postal Code]
+              </p>
+
+              <p class="venue-time">
+                <span>DATE</span> March 6, 2027
+                <br>
+                <span>TIME</span> [Insert reception time]
+              </p>
+
+              <!-- Replace with the exact reception Google Maps link. -->
+              <a class="button button-outline"
+                 href="https://www.google.com/maps/search/?api=1&amp;query=YOUR+RECEPTION+VENUE"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                VIEW ON GOOGLE MAPS ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         4. WEDDING TIMELINE
+         ========================================== -->
+    <section class="timeline-section section-padding" id="timeline">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">A DAY TO REMEMBER</p>
+          <h2 class="section-heading">The Wedding Timeline</h2>
+          <p class="section-description">
+            A little guide to the moments we'll share together.
+          </p>
+        </div>
+
+        <div class="timeline-frame">
+          <!--
+            Replace the image below with your timeline infographic:
+            images/wedding-timeline.png
+
+            Example:
+            <img src="images/wedding-timeline.png"
+                 alt="Wedding day timeline" loading="lazy">
+          -->
+          <img
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+            alt="Wedding celebration inspiration — replace with your custom timeline infographic"
+            loading="lazy">
+          <div class="timeline-placeholder">
+            <span class="eyebrow">YOUR WEDDING DAY</span>
+            <h3>Your moments, beautifully planned.</h3>
+            <p>
+              Replace this image with your wedding timeline graphic
+              showing ceremony, reception, dinner, and other activities.
+            </p>
+          </div>
+        </div>
+        <p class="image-note">
+          * Final schedule and activity times will be announced soon.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         5. DRESS CODE
+         ========================================== -->
+    <section class="dress-section section-padding" id="dress-code">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">DRESSED FOR THE OCCASION</p>
+          <h2 class="section-heading">The Dress Code</h2>
+          <p class="section-description">
+            Come dressed with love. Help us make the day feel as
+            special and beautiful as the memories we'll create.
+          </p>
+        </div>
+
+        <div class="attire-grid">
+
+          <article class="attire-card">
+            <span class="attire-index">01</span>
+            <h3>Principal Sponsors</h3>
+            <p class="attire-type">FORMAL / FILIPINIANA</p>
+            <p>
+              Please wear elegant formal attire. Sponsors may follow
+              the designated motif and specific attire instructions
+              provided by the couple.
+            </p>
+          </article>
+
+          <article class="attire-card">
+            <span class="attire-index">02</span>
+            <h3>Ladies</h3>
+            <p class="attire-type">FORMAL WEAR</p>
+            <p>
+              Floor-length gowns, elegant dresses, or sophisticated
+              formal attire in the requested wedding colors.
+            </p>
+          </article>
+
+          <article class="attire-card">
+            <span class="attire-index">03</span>
+            <h3>Gentlemen</h3>
+            <p class="attire-type">SUIT / BARONG</p>
+            <p>
+              A well-fitted suit, dress pants with a formal shirt,
+              or a traditional barong, as appropriate to the final
+              dress code instructions.
+            </p>
+          </article>
+        </div>
+
+        <!-- COLOR PALETTE -->
+        <div class="palette-block">
+          <div class="palette-heading">
+            <div>
+              <p class="eyebrow">OUR WEDDING COLORS</p>
+              <h3>The Color Palette</h3>
+            </div>
+            <p>Replace these neutral swatches with your theme colors.</p>
+          </div>
+
+          <!-- Change each --swatch-color to your chosen hex color. -->
+          <div class="palette-grid">
+            <div class="swatch">
+              <span class="swatch-color" style="--swatch-color:#d6d0c8"></span>
+              <span>COLOR 01</span>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color" style="--swatch-color:#aaa39a"></span>
+              <span>COLOR 02</span>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color" style="--swatch-color:#77736d"></span>
+              <span>COLOR 03</span>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color" style="--swatch-color:#dcd8d2"></span>
+              <span>COLOR 04</span>
+            </div>
+            <div class="swatch">
+              <span class="swatch-color" style="--swatch-color:#373633"></span>
+              <span>COLOR 05</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DO'S AND DON'TS -->
+        <div class="attire-rules">
+          <div class="rules-column">
+            <h3><span aria-hidden="true">✓</span> The Do's</h3>
+            <ul>
+              <li>Wear formal and occasion-appropriate attire.</li>
+              <li>Follow the requested wedding color motif.</li>
+              <li>Choose comfortable, polished footwear.</li>
+              <li>Celebrate, smile, and enjoy the day with us.</li>
+            </ul>
+          </div>
+
+          <div class="rules-column">
+            <h3><span aria-hidden="true">×</span> The Don'ts</h3>
+            <ul>
+              <li>Please avoid white and off-white attire.</li>
+              <li>Avoid overly casual clothing and footwear.</li>
+              <li>Avoid colors specifically reserved for the couple or entourage.</li>
+              <li>Please respect the final dress code instructions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         6. WEDDING PARTY
+         ========================================== -->
+    <section class="party-section section-padding" id="wedding-party">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">OUR FAVORITE PEOPLE</p>
+          <h2 class="section-heading">The Wedding Party</h2>
+          <p class="section-description">
+            The wonderful people standing beside us as we begin
+            this new chapter.
+          </p>
+        </div>
+
+        <div class="party-grid">
+
+          <article class="party-card">
+            <span class="party-icon" aria-hidden="true">✳</span>
+            <h3>Principal Sponsors</h3>
+            <p class="party-subtitle">OUR GUIDES &amp; WITNESSES</p>
+            <ul class="name-list">
+              <li>[Sponsor Name 1]</li>
+              <li>[Sponsor Name 2]</li>
+              <li>[Sponsor Name 3]</li>
+              <li>[Sponsor Name 4]</li>
+              <li>[Add more names]</li>
+            </ul>
+          </article>
+
+          <article class="party-card">
+            <span class="party-icon" aria-hidden="true">✳</span>
+            <h3>Bridal Entourage</h3>
+            <p class="party-subtitle">BRIDE'S SIDE</p>
+            <ul class="name-list">
+              <li><strong>Maid / Matron of Honor</strong></li>
+              <li>[Name]</li>
+              <li><strong>Bridesmaids</strong></li>
+              <li>[Name 1]</li>
+              <li>[Name 2]</li>
+              <li>[Name 3]</li>
+              <li>[Add more names]</li>
+            </ul>
+          </article>
+
+          <article class="party-card">
+            <span class="party-icon" aria-hidden="true">✳</span>
+            <h3>Groom's Entourage</h3>
+            <p class="party-subtitle">GROOM'S SIDE</p>
+            <ul class="name-list">
+              <li><strong>Best Man</strong></li>
+              <li>[Name]</li>
+              <li><strong>Groomsmen</strong></li>
+              <li>[Name 1]</li>
+              <li>[Name 2]</li>
+              <li>[Name 3]</li>
+              <li>[Add more names]</li>
+            </ul>
+          </article>
+
+          <article class="party-card">
+            <span class="party-icon" aria-hidden="true">✳</span>
+            <h3>Little &amp; Special Roles</h3>
+            <p class="party-subtitle">OUR LITTLE HELPERS</p>
+            <ul class="name-list">
+              <li><strong>Ring Bearer</strong></li>
+              <li>[Name]</li>
+              <li><strong>Coin Bearer</strong></li>
+              <li>[Name]</li>
+              <li><strong>Flower Girls</strong></li>
+              <li>[Name 1], [Name 2]</li>
+              <li><strong>Other Roles</strong></li>
+              <li>[Insert names and roles]</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         7. RSVP
+         ========================================== -->
+    <section class="rsvp-section section-padding" id="rsvp">
+      <div class="container rsvp-layout">
+        <div class="rsvp-copy">
+          <p class="eyebrow">KINDLY REPLY</p>
+          <h2 class="section-heading">Will You Join Us?</h2>
+          <p>
+            Your presence would mean the world to us. Kindly let us
+            know if you'll be celebrating with us by submitting
+            your response below.
+          </p>
+
+          <div class="rsvp-date">
+            <span class="rsvp-date-number">06</span>
+            <div>
+              <strong>MARCH 2027</strong>
+              <span>Jayson &amp; Zenia's Wedding</span>
+            </div>
+          </div>
+
+          <p class="rsvp-deadline">
+            KINDLY RESPOND BY [INSERT RSVP DEADLINE]
+          </p>
+        </div>
+
+        <div class="rsvp-form-wrap">
+          <!--
+            FORM CONNECTION OPTIONS:
+
+            1. Formspree:
+               Create a form at https://formspree.io/
+               Change this form's opening tag to:
+               action="https://formspree.io/f/YOUR_FORM_ID"
+               method="POST"
+
+            2. Netlify Forms:
+               Add data-netlify="true" name="wedding-rsvp"
+               to the form and include:
+               <input type="hidden" name="form-name"
+                      value="wedding-rsvp">
+
+               Deploy the site on Netlify, not GitHub Pages,
+               to use Netlify Forms processing.
+
+            3. Google Forms:
+               Create a Google Form, then either embed its
+               published form in an iframe or map your fields
+               to a properly configured Google Apps Script.
+
+            GitHub Pages is static hosting; it does not process
+            form submissions by itself.
+          -->
+
+          <form id="rsvpForm" class="rsvp-form">
+            <div class="form-heading">
+              <span class="eyebrow">YOUR RESPONSE</span>
+              <h3>Kindly fill in the details</h3>
+            </div>
+
+            <div class="form-group">
+              <label for="fullName">Full Name <span>*</span></label>
+              <input type="text"
+                     id="fullName"
+                     name="fullName"
+                     placeholder="Enter your full name"
+                     autocomplete="name"
+                     required>
+            </div>
+
+            <fieldset class="form-group attendance-group">
+              <legend>Will you be attending? <span>*</span></legend>
+
+              <label class="radio-card">
+                <input type="radio"
+                       name="attendance"
+                       value="Joyfully Accepts"
+                       required>
+                <span class="radio-indicator"></span>
+                <span>
+                  <strong>Joyfully Accepts</strong>
+                  <small>Can't wait to celebrate!</small>
+                </span>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio"
+                       name="attendance"
+                       value="Regretfully Declines">
+                <span class="radio-indicator"></span>
+                <span>
+                  <strong>Regretfully Declines</strong>
+                  <small>Celebrating from afar.</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="guestCount">Number of Guests (Including You)</label>
+              <select id="guestCount" name="guestCount">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+              </select>
+              <small class="field-hint">
+                Please follow the number of seats allocated to your invitation.
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="dietaryNotes">
+                Dietary Restrictions / Special Notes
+              </label>
+              <textarea id="dietaryNotes"
+                        name="dietaryNotes"
+                        rows="4"
+                        placeholder="Allergies, dietary needs, or a note for us..."></textarea>
+            </div>
+
+            <button type="submit" class="button button-dark submit-button">
+              SUBMIT RSVP <span aria-hidden="true">↗</span>
+            </button>
+
+            <p class="form-message"
+               id="formMessage"
+               role="status"
+               aria-live="polite"></p>
+
+            <p class="form-privacy">
+              Your response is intended for wedding planning only.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         8. FAQS
+         ========================================== -->
+    <section class="faq-section section-padding" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <p class="eyebrow">A FEW HELPFUL DETAILS</p>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <p>
+            Everything you might need to know before joining
+            us on our special day.
+          </p>
+          <a href="#rsvp" class="text-link">READY TO RSVP? ↗</a>
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>
+              <span>Can I bring a plus one?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We are keeping our celebration intimate. Please refer
+                to your invitation for the number of seats reserved
+                for you. If you have questions, contact the couple
+                before confirming your attendance.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>What time should I arrive?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We recommend arriving 30 minutes before the ceremony
+                begins so you have time to settle in. The final
+                ceremony time will be shared in the wedding details.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Is there parking available at the venue?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Parking information is being finalized. Please check
+                back for details about parking availability and any
+                nearby alternatives.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Are children allowed?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Please check your invitation for the guests included
+                in your reservation. If you have questions about
+                children attending, contact us before submitting
+                your RSVP.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Will the ceremony be unplugged?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We invite everyone to be present and enjoy the moment.
+                Please keep phones silent and follow the couple's
+                instructions about photography during the ceremony.
+                We will share our final unplugged ceremony policy
+                before the wedding.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a href="#home" class="footer-monogram">J <span>&amp;</span> Z</a>
+      <p>Two hearts. One love. Forever begins here.</p>
+      <p class="footer-date">MARCH 06, 2027</p>
+      <a href="#top" class="back-to-top">BACK TO TOP ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <p>Made with love for Jayson &amp; Zenia.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
