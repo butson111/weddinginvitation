@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayson & Zenia - Wedding Website</title>
+  
+  <!-- Modern clean font: Montserrat & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">J & Z</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#dresscode">Dress Code</a></li>
+        <li><a href="#wedding-party">Wedding Party</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 1. HERO SECTION -->
+  <header id="hero" class="hero-section">
+    <!-- HERO BACKGROUND OVERLAY & IMAGE CONTAINER -->
+    <!-- REPLACE IMAGE URL BELOW WITH YOUR HERO BACKGROUND -->
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <h1 class="hero-names">Jayson &amp; Zenia</h1>
+      <p class="hero-date">March 6, 2027</p>
+      <p class="hero-tagline">"Two lives, two hearts, joined together in friendship, united forever in love."</p>
+      
+      <!-- Interactive Live Countdown -->
+      <div class="countdown-container" id="countdown">
+        <div class="countdown-item">
+          <span id="days" class="countdown-number">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span id="hours" class="countdown-number">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes" class="countdown-number">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds" class="countdown-number">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <a href="#rsvp" class="btn btn-primary">RSVP Now</a>
+    </div>
+  </header>
+
+  <!-- 2. OUR STORY SECTION -->
+  <section id="story" class="section">
+    <div class="container">
+      <h2 class="section-title">How It All Began</h2>
+      <p class="section-subtitle">And somehow, it became forever. Read the story of how two hearts found their way to each other.</p>
+      
+      <div class="story-preview-grid">
+        <div class="story-image-wrapper">
+          <!-- PLACEHOLDER FOR CHATBOX / SCREENSHOT / MEMORABILIA PHOTO -->
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="How we met / First memory" class="story-img">
+          <div class="image-caption-note"><!-- Optional photo caption -->First Screenshot / Memory</div>
+        </div>
+        
+        <div class="story-teaser-box">
+          <h3>A Memory to Remember</h3>
+          <p>
+            It all started with a simple hello that turned into hours of conversation. From unexpected encounters to building a life filled with shared laughter and support...
+          </p>
+          <button id="openStoryModal" class="btn btn-secondary">VIEW OUR STORY</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY MODAL DIALOG -->
+  <div id="storyModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <button id="closeStoryModal" class="modal-close" aria-label="Close modal">&times;</button>
+      <h2>Our Full Story</h2>
+      <div class="story-full-text">
+        <p><strong>Chapter 1: The First Meeting</strong><br>
+        [INSERT YOUR BACKSTORY TEXT HERE - Write about where you met, your first conversation, or screenshot background story.]</p>
+        
+        <p><strong>Chapter 2: Growing Together</strong><br>
+        [INSERT YOUR BACKSTORY TEXT HERE - Share special memories, challenges overcome together, and memorable dates.]</p>
+        
+        <p><strong>Chapter 3: The Proposal</strong><br>
+        [INSERT YOUR BACKSTORY TEXT HERE - Detail how the proposal happened and what led you to say 'Yes!']</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. WEDDING DETAILS SECTION -->
+  <section id="details" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Wedding Details</h2>
+      <p class="section-subtitle">We can't wait to celebrate with you. Here are the key event locations.</p>
+      
+      <div class="cards-grid">
+        <!-- Ceremony Card -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <!-- PLACEHOLDER: CEREMONY VENUE PHOTO -->
+            <img src="https://images.unsplash.com/photo-1545232979-fbf5963d13a2?auto=format&fit=crop&w=800&q=80" alt="Ceremony Venue">
+          </div>
+          <div class="card-body">
+            <h3>Ceremony</h3>
+            <p class="venue-name">[Insert Church/Ceremony Venue Name]</p>
+            <p class="venue-time">Time: 2:00 PM</p>
+            <p class="venue-address">123 Ceremony Street, Sample City, State, 12345</p>
+            <!-- REPLACE HREF BELOW WITH YOUR GOOGLE MAPS LINK -->
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on Google Maps</a>
+          </div>
+        </div>
+
+        <!-- Reception Card -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <!-- PLACEHOLDER: RECEPTION VENUE PHOTO -->
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Reception Venue">
+          </div>
+          <div class="card-body">
+            <h3>Reception</h3>
+            <p class="venue-name">[Insert Reception Hall Name]</p>
+            <p class="venue-time">Time: 5:00 PM</p>
+            <p class="venue-address">456 Celebration Boulevard, Sample City, State, 12345</p>
+            <!-- REPLACE HREF BELOW WITH YOUR GOOGLE MAPS LINK -->
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WEDDING TIMELINE SECTION -->
+  <section id="timeline" class="section">
+    <div class="container">
+      <h2 class="section-title">Day Schedule & Timeline</h2>
+      <p class="section-subtitle">Here is a guide to help you navigate our special day.</p>
+      
+      <div class="timeline-graphic-wrapper">
+        <!-- PLACEHOLDER FOR UPLOADED TIMELINE INFOGRAPHIC GRAPHIC IMAGE -->
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80" alt="Wedding Timeline Graphic" class="timeline-graphic-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DRESS CODE SECTION -->
+  <section id="dresscode" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Dress Code & Style Guide</h2>
+      <p class="section-subtitle">Formal Attire / Black Tie Optional</p>
+
+      <!-- Color Swatches Placeholder -->
+      <div class="palette-container">
+        <h3>Theme Color Palette</h3>
+        <p>Please refer to our wedding colors when choosing your attire:</p>
+        <div class="swatches-grid">
+          <div class="swatch" style="background-color: #2b2b2b;" title="Charcoal"><span>Charcoal</span></div>
+          <div class="swatch" style="background-color: #5a5a5a;" title="Slate"><span>Slate</span></div>
+          <div class="swatch" style="background-color: #8c8c8c;" title="Silver"><span>Silver</span></div>
+          <div class="swatch" style="background-color: #d9d9d9;" title="Pearl"><span>Pearl</span></div>
+          <div class="swatch" style="background-color: #f4f4f4;" title="Off-White"><span>Soft Gray</span></div>
+        </div>
+      </div>
+
+      <!-- Attire Categories Grid -->
+      <div class="dresscode-grid">
+        <div class="dresscode-card">
+          <h4>Principal Sponsors</h4>
+          <p>Formal Barong Tagalog / Dark Suit for Men. Floor-length Formal Gowns for Ladies in specified palette tone.</p>
+        </div>
+        <div class="dresscode-card">
+          <h4>Ladies</h4>
+          <p>Formal / Semi-Formal Evening Gowns, Long Dresses, or Dressy Cocktail wear.</p>
+        </div>
+        <div class="dresscode-card">
+          <h4>Gentlemen</h4>
+          <p>Formal Suit and Tie or Barong Tagalog with dark trousers and leather shoes.</p>
+        </div>
+      </div>
+
+      <!-- Do's and Don'ts -->
+      <div class="dos-donts-grid">
+        <div class="dos-box">
+          <h4>DO'S</h4>
+          <ul>
+            <li>Do follow the formal attire guidelines and palette.</li>
+            <li>Do bring comfortable shoes for dancing during reception.</li>
+            <li>Do arrive at least 30 minutes before the ceremony starts.</li>
+          </ul>
+        </div>
+        <div class="donts-box">
+          <h4>DON'TS</h4>
+          <ul>
+            <li>Don't wear pure white, off-white, cream, or bridal shades.</li>
+            <li>Don't wear casual attire like shorts, t-shirts, slippers, or denim.</li>
+            <li>Don't block photographers during key moments.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. WEDDING PARTY SECTION -->
+  <section id="wedding-party" class="section">
+    <div class="container">
+      <h2 class="section-title">The Wedding Party</h2>
+      <p class="section-subtitle">Standing by our side as we take this big step.</p>
+
+      <div class="party-group">
+        <h3>Principal Sponsors</h3>
+        <div class="party-columns">
+          <ul>
+            <li>Mr. Firstname Lastname</li>
+            <li>Mr. Firstname Lastname</li>
+            <li>Mr. Firstname Lastname</li>
+          </ul>
+          <ul>
+            <li>Mrs. Firstname Lastname</li>
+            <li>Mrs. Firstname Lastname</li>
+            <li>Mrs. Firstname Lastname</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="party-grid">
+        <div class="party-card">
+          <h3>Maid of Honor</h3>
+          <p class="party-name">Name Here</p>
+        </div>
+        <div class="party-card">
+          <h3>Best Man</h3>
+          <p class="party-name">Name Here</p>
+        </div>
+      </div>
+
+      <div class="party-grid-two">
+        <div class="party-card">
+          <h3>Bridesmaids</h3>
+          <ul>
+            <li>Bridesmaid Name 1</li>
+            <li>Bridesmaid Name 2</li>
+            <li>Bridesmaid Name 3</li>
+          </ul>
+        </div>
+        <div class="party-card">
+          <h3>Groomsmen</h3>
+          <ul>
+            <li>Groomsman Name 1</li>
+            <li>Groomsman Name 2</li>
+            <li>Groomsman Name 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="party-group">
+        <h3>Special Roles</h3>
+        <p><strong>Ring Bearer:</strong> Name Here</p>
+        <p><strong>Coin Bearer:</strong> Name Here</p>
+        <p><strong>Flower Girls:</strong> Name Here, Name Here</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. RSVP SECTION -->
+  <section id="rsvp" class="section bg-alt">
+    <div class="container small-container">
+      <h2 class="section-title">RSVP</h2>
+      <p class="section-subtitle">Please respond by February 1, 2027.</p>
+
+      <!-- 
+        HOW TO CONNECT THIS FORM TO FREE BACKENDS:
+        Option A (Formspree): Change action to "https://formspree.io/f/YOUR_FORM_ID" method="POST"
+        Option B (Netlify): Add netlify attribute to the form tag: <form name="rsvp" netlify>
+        Option C (Google Forms): Embed an <iframe> from Google Forms directly or map input names.
+      -->
+      <form id="rsvpForm" class="rsvp-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="e.g. John Doe">
+        </div>
+
+        <div class="form-group">
+          <label>Will you be attending? *</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="accept" required> Joyfully Accepts
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="decline" required> Regretfully Declines
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="guestCount">Number of Guests (Including yourself) *</label>
+          <select id="guestCount" name="guestCount" required>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests (+1)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dietary">Dietary Restrictions or Special Notes</label>
+          <textarea id="dietary" name="dietary" rows="4" placeholder="e.g. Vegetarian, Food Allergies, or message for the couple"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width">Send Response</button>
+      </form>
+      
+      <div id="rsvpFeedback" class="form-feedback hidden"></div>
+    </div>
+  </section>
+
+  <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQs) SECTION -->
+  <section id="faq" class="section">
+    <div class="container small-container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about our big day.</p>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">Can I bring a plus one? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Due to seating capacity constraints, we can only accommodate guests formally named on your invitation or specified guest count option in the RSVP section.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What time should I arrive? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>We recommend arriving 30 minutes prior to the scheduled ceremony start time so everyone can be comfortably seated before the procession begins.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is there parking available at the venue? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes! Free designated parking spaces are available for all guests at both ceremony and reception locations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are children allowed? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>While we love your little ones, our event will be an adults-only celebration with the exception of immediate family and children participating in the wedding party.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Unplugged ceremony policy? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>We kindly ask that you put away phones and cameras during our ceremony so that everyone can fully present in the moment with us. Our photographers will capture everything!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>Jayson &amp; Zenia &bull; March 6, 2027</p>
+      <p class="copyright">&copy; 2027 Built with love.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
