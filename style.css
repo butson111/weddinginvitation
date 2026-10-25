@@ -1661,16 +1661,19 @@ summary {
 
 
 
+
+
 /* ==========================================
-   WEDDING MONOGRAM
+   WEDDING MONOGRAMS
    ========================================== */
 
-/* Upper-left navigation monogram */
+/* Upper-left navigation logo */
 .brand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  line-height: 0;
 }
 
 .brand img {
@@ -1680,16 +1683,16 @@ summary {
   object-fit: contain;
 }
 
-/* Monogram above the hero title */
+/* White monogram above the hero title */
 .hero-monogram {
   display: block;
   width: 110px;
   height: 110px;
   object-fit: contain;
-  margin: 0 auto 20px;
+  margin: 0 auto 18px;
 }
 
-/* Responsive sizing on mobile */
+/* Mobile sizing */
 @media (max-width: 600px) {
   .brand img {
     width: 42px;
@@ -1699,6 +1702,6 @@ summary {
   .hero-monogram {
     width: 85px;
     height: 85px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 }
