@@ -1660,8 +1660,20 @@ summary {
 }
 
 
+
+/* ==========================================
+   WEDDING MONOGRAM
+   ========================================== */
+
 /* Upper-left navigation monogram */
-.logo img {
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand img {
   display: block;
   width: 52px;
   height: 52px;
@@ -1679,7 +1691,7 @@ summary {
 
 /* Responsive sizing on mobile */
 @media (max-width: 600px) {
-  .logo img {
+  .brand img {
     width: 42px;
     height: 42px;
   }
