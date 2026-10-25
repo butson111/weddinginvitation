@@ -64,6 +64,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 
+  // ------------------------------------------
+  // ADD TO CALENDAR
+  // ------------------------------------------
+
+  
+const calendarButton = document.getElementById("addToCalendar");
+
+calendarButton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  // Replace these with your actual wedding details
+  const title = "Our Wedding Day";
+  const location = "Your Wedding Venue";
+  const description = "Join us as we celebrate our wedding!";
+
+  // Format: YYYYMMDDTHHMMSS
+  const start = "20270306T150000";
+  const end = "20270306T203000";
+
+  const calendarContent = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Our Wedding//Wedding Calendar//EN",
+    "CALSCALE:GREGORIAN",
+    "BEGIN:VEVENT",
+    `DTSTART:${start}`,
+    `DTEND:${end}`,
+    `SUMMARY:${title}`,
+    `LOCATION:${location}`,
+    `DESCRIPTION:${description}`,
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+
+  const blob = new Blob([calendarContent], {
+    type: "text/calendar;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "our-wedding.ics";
+  link.click();
+
+  URL.revokeObjectURL(url);
+});
+
 
   // ------------------------------------------
   // 2. RESPONSIVE MOBILE NAVIGATION
