@@ -1678,8 +1678,8 @@ summary {
 
 .brand img {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 
@@ -1689,19 +1689,19 @@ summary {
   width: 175px;
   height: 175px;
   object-fit: contain;
-  margin: 0 auto 18px;
+  margin: 0 auto 10px;
 }
 
 /* Mobile sizing */
 @media (max-width: 600px) {
   .brand img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   .hero-monogram {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 14px;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
   }
 }
