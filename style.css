@@ -1686,8 +1686,8 @@ summary {
 /* White monogram above the hero title */
 .hero-monogram {
   display: block;
-  width: 110px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   margin: 0 auto 18px;
 }
@@ -1700,8 +1700,8 @@ summary {
   }
 
   .hero-monogram {
-    width: 85px;
-    height: 85px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 14px;
   }
 }
