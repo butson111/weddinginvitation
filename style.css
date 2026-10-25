@@ -446,6 +446,28 @@ summary {
   font-size: 12px;
 }
 
+.calendar-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  border: 1px solid #b89b72;
+  border-radius: 30px;
+  background: transparent;
+  color: #8b7355;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.calendar-btn:hover {
+  background: #b89b72;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
 /* 6. OUR STORY */
 .story-section {
   background: var(--color-bg);
