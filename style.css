@@ -1630,26 +1630,43 @@ summary {
 
 
 /* CALENDAR */
+
 .calendar-button-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   width: 100%;
   margin-top: 25px;
 }
 
 .calendar-btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 12px 24px;
   border: 1px solid #b89b72;
   border-radius: 30px;
+  color: #8b7355;
   text-align: center;
   text-decoration: none;
-  color: #8b7355;
+  font-family: inherit;
+  font-size: 14px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .calendar-btn:hover {
   background: #b89b72;
-  color: white;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .calendar-button-wrapper {
+    flex-direction: column;
+  }
+
+  .calendar-btn {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 280px;
+  }
 }
