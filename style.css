@@ -446,33 +446,6 @@ summary {
   font-size: 12px;
 }
 
-.calendar-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  border: 1px solid #b89b72;
-  border-radius: 30px;
-  background: transparent;
-  color: #8b7355;
-  font-family: inherit;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.calendar-btn:hover {
-  background: #b89b72;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.calendar-button-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
 
 /* 6. OUR STORY */
 .story-section {
@@ -1652,4 +1625,31 @@ summary {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+
+/* CALENDAR */
+.calendar-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.calendar-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid #b89b72;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #8b7355;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.calendar-btn:hover {
+  background: #b89b72;
+  color: white;
 }
