@@ -1658,3 +1658,35 @@ summary {
   background: #b89b72;
   color: #fff;
 }
+
+
+/* Upper-left navigation monogram */
+.logo img {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+/* Monogram above the hero title */
+.hero-monogram {
+  display: block;
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+}
+
+/* Responsive sizing on mobile */
+@media (max-width: 600px) {
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-monogram {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 16px;
+  }
+}
