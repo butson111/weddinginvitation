@@ -64,53 +64,64 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 
+ 
   // ------------------------------------------
   // ADD TO CALENDAR
   // ------------------------------------------
 
-  
-const calendarButton = document.getElementById("addToCalendar");
+  const calendarButton = document.getElementById("addToCalendar");
 
-calendarButton.addEventListener("click", function (event) {
-  event.preventDefault();
+  if (calendarButton) {
+    calendarButton.addEventListener("click", function (event) {
+      event.preventDefault();
 
-  // Replace these with your actual wedding details
-  const title = "Our Wedding Day";
-  const location = "Your Wedding Venue";
-  const description = "Join us as we celebrate our wedding!";
+      const title = "Jayson & Zenia Wedding";
+      const location = "San Sebastian Parish Church Tarlac";
+      const description = "Join us as we celebrate our wedding!";
 
-  // Format: YYYYMMDDTHHMMSS
-  const start = "20270306T150000";
-  const end = "20270306T203000";
+      // March 6, 2027, 3:00 PM–8:30 PM, Philippine time (UTC+8).
+      const start = "20270306T150000";
+      const end = "20270306T203000";
 
-  const calendarContent = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//Our Wedding//Wedding Calendar//EN",
-    "CALSCALE:GREGORIAN",
-    "BEGIN:VEVENT",
-    `DTSTART:${start}`,
-    `DTEND:${end}`,
-    `SUMMARY:${title}`,
-    `LOCATION:${location}`,
-    `DESCRIPTION:${description}`,
-    "END:VEVENT",
-    "END:VCALENDAR"
-  ].join("\r\n");
+      const escapeICal = (value) =>
+        String(value)
+          .replace(/\\/g, "\\\\")
+          .replace(/\n/g, "\\n")
+          .replace(/,/g, "\\,")
+          .replace(/;/g, "\\;");
 
-  const blob = new Blob([calendarContent], {
-    type: "text/calendar;charset=utf-8"
-  });
+      const calendarContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Jayson and Zenia//Wedding//EN",
+        "CALSCALE:GREGORIAN",
+        "BEGIN:VEVENT",
+        `DTSTART;TZID=Asia/Manila:${start}`,
+        `DTEND;TZID=Asia/Manila:${end}`,
+        `SUMMARY:${escapeICal(title)}`,
+        `LOCATION:${escapeICal(location)}`,
+        `DESCRIPTION:${escapeICal(description)}`,
+        "END:VEVENT",
+        "END:VCALENDAR",
+        ""
+      ].join("\r\n");
 
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
+      const blob = new Blob([calendarContent], {
+        type: "text/calendar;charset=utf-8"
+      });
 
-  link.href = url;
-  link.download = "our-wedding.ics";
-  link.click();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
 
-  URL.revokeObjectURL(url);
-});
+      link.href = url;
+      link.download = "jayson-and-zenia-wedding.ics";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+  }
 
 
   // ------------------------------------------
