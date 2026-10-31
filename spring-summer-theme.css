@@ -1,0 +1,82 @@
+/* JAYSON & ZENIA — SPRING / SUMMER THEME
+   Add this file beside style.css and load it after style.css. */
+
+:root {
+  --spring-blush: #E8BFC4;
+  --spring-peach: #F3C6A8;
+  --spring-butter: #F6E7A6;
+  --spring-sage: #A8B8A0;
+  --spring-ink: #45433E;
+  --spring-muted: #77736B;
+  --spring-cream: #FBF8F3;
+  --spring-white: #FFFDF9;
+  --spring-line: #E9E1D7;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--spring-cream); color: var(--spring-ink); }
+.site-header {
+  background: rgba(251,248,243,.96);
+  border-bottom: 1px solid rgba(168,184,160,.28);
+}
+.nav-links a:hover, .nav-links a:focus-visible, .text-link:hover { color: #71866C; }
+.nav-rsvp, .button-dark, .submit-button {
+  background: var(--spring-sage); border-color: var(--spring-sage); color: #fffdf9;
+}
+.nav-rsvp:hover, .button-dark:hover, .submit-button:hover {
+  background: #899D81; border-color: #899D81;
+}
+.button-outline { border-color: var(--spring-sage); color: #71866C; }
+.button-outline:hover { background: var(--spring-sage); color: #fffdf9; }
+.button-light, .calendar-btn {
+  background: var(--spring-blush); border-color: var(--spring-blush); color: #514344;
+}
+.section-heading, .venue-content h3, .palette-heading h3, .attire-card-copy h3 { color: var(--spring-ink); }
+.section-intro::after, .hero-divider { background: var(--spring-peach); }
+.countdown-section, .story-section, .party-section, .faq-section { background-color: var(--spring-cream); }
+.details-section, .dress-section { background-color: #F6F2EA; }
+.countdown-number, .rsvp-date-number { color: #71866C; }
+.venue-card, .attire-card, .rsvp-form, .faq-item, .party-card, .rules-column {
+  background: var(--spring-white); border-color: var(--spring-line);
+}
+.venue-image-label { background: var(--spring-blush); color: #514344; }
+.eyebrow, .story-number, .palette-heading h3, .attire-rules h3 { color: #71866C; }
+.site-footer { background: #899D81; color: #fffdf9; }
+.site-footer a { color: #fffdf9; }
+
+/* Dress-code images fill each card with no image outline. */
+.attire-grid { align-items: stretch; gap: clamp(18px, 2.5vw, 30px); }
+.attire-card {
+  overflow: hidden; border: 0 !important; outline: 0 !important;
+  box-shadow: 0 8px 24px rgba(77,70,59,.07);
+  border-radius: 14px; padding: 0;
+}
+.attire-image-placeholder {
+  width: 100%; height: auto; aspect-ratio: 4 / 5; overflow: hidden;
+  border: 0 !important; outline: 0 !important; border-radius: 0;
+  background: #F2EDE5; margin: 0; padding: 0; display: block;
+}
+.attire-image-placeholder img {
+  display: block; width: 100%; height: 100%; max-width: none;
+  object-fit: cover; object-position: center;
+  border: 0 !important; outline: 0 !important; border-radius: 0; margin: 0;
+}
+.attire-card-copy { padding: 20px 20px 23px; text-align: center; }
+.attire-card-copy h3 {
+  margin: 0 0 9px; font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 500;
+}
+.attire-card-copy p {
+  margin: 0; color: var(--spring-muted); font-size: .92rem; line-height: 1.75;
+}
+.attire-rules .rules-column:first-child h3 span { color: #71866C; }
+.attire-rules .rules-column:last-child h3 span { color: #D69B91; }
+.back-to-top { display: none !important; }
+
+@media (max-width: 760px) {
+  .attire-grid { grid-template-columns: 1fr; gap: 22px; }
+  .attire-card { width: min(100%, 460px); margin-inline: auto; }
+  .attire-image-placeholder { aspect-ratio: 4 / 5; }
+  .attire-card-copy { padding: 17px 18px 21px; }
+  .attire-card-copy p { font-size: .9rem; }
+}
