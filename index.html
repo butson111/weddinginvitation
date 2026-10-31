@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f6f3">
+
+  <title>Jayson &amp; Zenia | March 6, 2027</title>
+  <meta name="description"
+        content="Join Jayson and Zenia as they celebrate their wedding on March 6, 2027.">
+
+  <!-- Google Fonts. Optional: replace with your preferred fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ==========================================
+       NAVIGATION
+       ========================================== -->
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Main navigation">
+      
+    <a href="#home" class="brand" aria-label="Jayson and Zenia home">
+      <img src="./images/monoblack.png" alt="Jayson and Zenia monogram">
+    </a>
+
+      <button class="menu-toggle"
+              id="menuToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#details">Wedding Details</a></li>
+        <li><a href="#dress-code">Dress Code</a></li>
+        <li><a href="#wedding-party">Wedding Party</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#rsvp" class="nav-rsvp">RSVP <span>↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ==========================================
+         1. HERO SECTION
+         ========================================== -->
+    <section class="hero" id="home">
+      <!-- Replace the background-image URL in style.css with your photo. -->
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container">
+      <img
+          src="./images/monowhite.png"
+          alt=""
+          class="hero-monogram"
+        >
+        <h1>Jayson <span class="ampersand">&amp;</span> Zenia</h1>
+
+        <p class="hero-tagline">
+          Two lives, two hearts, joined together in friendship,
+          united forever in love.
+        </p>
+
+        <div class="hero-divider" aria-hidden="true"></div>
+
+        <p class="hero-date">MARCH 06, 2027</p>
+
+        <a href="#details" class="button button-light">
+          CELEBRATE WITH US <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>OUR WEDDING DAY</span>
+        <span>06 . 03 . 27</span>
+      </div>
+    </section>
+
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section section-padding"
+             aria-label="Countdown to our wedding">
+      <div class="container countdown-inner">
+        <h2 class="section-heading">Until we say "I do"</h2>
+
+        <div class="countdown" id="countdown" aria-live="off">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">000</span>
+            <span class="countdown-label">DAYS</span>
+          </div>
+          <span class="countdown-colon" aria-hidden="true">:</span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">HOURS</span>
+          </div>
+          <span class="countdown-colon" aria-hidden="true">:</span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">MINUTES</span>
+          </div>
+          <span class="countdown-colon" aria-hidden="true">:</span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">SECONDS</span>
+          </div>
+        </div>
+
+        <p class="countdown-note" id="countdownMessage">
+          Every second brings us closer to forever.
+        </p>
+      </div>
+
+
+    <!-- CALENDAR -->
+
+      <div class="calendar-button-wrapper">
+        <a
+          class="calendar-btn"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jayson%20%26%20Zenia%20Wedding&dates=20270306T070000Z%2F20270306T123000Z&details=Join%20us%20as%20we%20celebrate%20our%20wedding%21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ♡ Add to Calendar
+        </a>
+      </div>
+
+
+      
+    </section>
+
+
+    <!-- ==========================================
+         2. OUR STORY
+         ========================================== -->
+    <section class="story-section section-padding" id="story">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="section-heading">How It All Began</h2>
+          <p class="section-description">
+            And somehow, it became forever. Read the story of how
+            two hearts found their way to each other.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-image image-frame">
+            <!-- Replace with your chat screenshot or couple photo. -->
+            <img
+              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+              alt="A couple sharing a romantic moment"
+              loading="lazy">
+            <span class="image-caption">OUR LITTLE LOVE STORY</span>
+          </div>
+
+          <div class="story-copy">
+            <span class="story-number">OUR BEGINNING</span>
+            <h3>From a simple hello<br>to a lifetime together.</h3>
+            <p>
+              Sometimes, the most beautiful stories begin in the
+              simplest ways. One conversation turned into countless
+              memories, laughter, dreams, and a love we never want
+              to stop choosing.
+            </p>
+            <p>
+              Now, we are ready to begin our next chapter, surrounded
+              by the people who have been part of our journey.
+            </p>
+
+            <button type="button"
+                    class="button button-dark"
+                    id="openStory">
+              VIEW OUR STORY <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- STORY MODAL -->
+    <dialog class="story-dialog" id="storyDialog"
+            aria-labelledby="storyDialogTitle">
+      <div class="dialog-content">
+        <button class="dialog-close"
+                id="closeStory"
+                type="button"
+                aria-label="Close our story">×</button>
+
+        <p class="eyebrow">CHAPTER ONE, TWO, AND FOREVER</p>
+        <h2 id="storyDialogTitle">Our Story</h2>
+
+        <!-- Replace this sample with your real backstory. -->
+        <div class="full-story">
+          <p>
+            Our story began at a birthday celebration where we truly met and had our first conversation. From the very beginning, talking to each other felt easy and natural. There were no awkward moments, just two people enjoying a conversation without knowing that it would eventually lead to something beautiful. But after that night, life went on, and for a few months, we lost touch. Little did we know that our story wasn't over just yet.<br>
+            It all started again with a simple message from Jayson: “Uy, may bago ata employee.” because Zen had just gotten new hairstyle, and what seemed like an ordinary message turned into endless conversations. Somehow, we found our way back to each other, and this time, those conversations became the beginning of something more.
+          </p>
+          <p>
+            One morning, as I headed to the office cafeteria for breakfast, I found him following behind me as we got into the elevator. He invited me to Tim Hortons, and somewhere along the way, he became the one person who remembered that I didn't drink coffee. While others gave me coffee drinks at the office, he was the one who brought me hot chocolate. I felt shy about it, so I told him that next time, the treat would be on me. And just like that, our little tradition of treating each other began.
+          </p>
+          <p>
+            Somewhere Between Coffee Dates and After-Work Walks
+          </p>
+          <p>
+            Our first dinner date was at El Corazon, and from then on, spending time together became part of our everyday routine. We would meet after work, hang out at High Street, or simply enjoy each other's company. Whenever overtime meant a late night at the office, one of us would be there to pick the other up.
+          </p>
+          <p>
+            Looking back, we realize that it was never really about where we went or what we did. It was about the comfort of being together, the conversations that never seemed to run out, and the happiness we found in even the simplest moments. Sometimes, all we needed was a little time together to make an ordinary day feel special.
+          </p>
+          <p>
+            On a rainy night, we officially became us on July 17, 2023, our story entered a new chapter. It may have seemed like an ordinary moment to the world, but it became one of the dates we will always hold close to our hearts. Since then, we've spent three years creating memories, discovering more about each other, and learning what it means to grow together. From our simple after-work dates to our travels and adventures, every experience has given us another reason to be grateful that we found each other.
+          </p>
+          <p>
+            Growing Together, Even From Afar<br>
+When Zen left Metrobank and started working remotely for another company, our relationship entered a new chapter. For two years, we navigated a long-distance relationship, learning how to make time for each other even when being together wasn't always easy.<br>
+Quality time has always been important to us, so the distance was one of our biggest challenges. But distance wasn't the only thing we had to work through. We also faced challenges connected to our past, learning to understand each other more deeply, work through difficult feelings, and grow beyond the things that weren't always easy to leave behind. Through it all, we learned the importance of patience, forgiveness, choosing to move forward together and learn to appreciate the moments we could share and make the most of the time we had together..
+          </p>
+          <p>
+            Every two weeks gave us something to look forward to: seeing each other and attending Mass together at Manaoag Church. Those visits became precious moments in our journey, reminding us that even when distance kept us apart, we could always find our way back to each other.
+          </p>
+          <p>
+            Our travels also became some of our most memorable experiences. Every trip allowed us to discover new places, share new adventures, and get to know each other even more. We learned that love is not just about seeing beautiful places together, but about having the right person beside us through every experience.
+          </p>
+          <p>
+            The Question We Had Been Waiting For<br>
+Marriage had been part of our conversations for a long time. We both knew that we were dating with the intention of building a future together. Somewhere along the way, we became certain that we wanted to spend our lives as husband and wife. Jayson popped the question in Wonderland Island in El Nido, Palawan, and received a sweet YES.<br>
+What made it even more memorable was the little secret behind the ring. There was no obvious ring box among the things we had brought along. As it turned out, the ring had been hidden inside a medicine box and wrapped in tissue paper! Of all the places to look, that was certainly the last one Zen would have expected. It's a funny little detail that makes the memory even sweeter, and one we will always smile about whenever we tell our engagement story.
+          </p>
+          <p>
+            And Now, Our Forever Begins<br>
+From a simple message at work to hot chocolate/ coffee dates, rainy-night memories, long-distance days, and unexpected adventures, our story has been built on the little things that slowly became everything.<br>
+We've learned that love isn't always about grand gestures or perfect moments. Sometimes, it's about showing up, making time, remembering the little things, and choosing each other even when life gets challenging.<br>
+As we begin this new chapter, we know that there will still be so much to discover, learn, and experience together. But if there's one thing our journey has taught us, it's that there is no one else we'd rather share it with.<br>
+Now, we're ready to turn all the little moments that brought us here into a lifetime of memories as husband and wife.
+With grateful hearts, we'd love to have you be part of this special day as we celebrate the beginning of our forever.
+          </p>
+          <p>
+            Here's to our greatest adventure yet.<br>
+Our love story continues…
+          </p>
+          <p class="story-signoff">With love, Jayson &amp; Zenia</p>
+        </div>
+      </div>
+    </dialog>
+
+
+    <!-- ==========================================
+         3. WEDDING DETAILS
+         ========================================== -->
+    <section class="details-section section-padding" id="details">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="section-heading">The Wedding Details</h2>
+          <p class="section-description">
+            Two special places, one unforgettable day.
+            We can't wait to celebrate with you.
+          </p>
+        </div>
+
+        <div class="venue-grid">
+
+          <!-- CEREMONY CARD -->
+          <article class="venue-card">
+            <div class="venue-image">
+              <!-- Replace with a ceremony venue photo. -->
+              <img
+                src="./images/church.jpg"
+                alt="Elegant wedding ceremony setting"
+                loading="lazy">
+              <span class="venue-image-label">THE CEREMONY</span>
+            </div>
+
+            <div class="venue-content">
+              <p class="eyebrow">THE BEGINNING OF FOREVER</p>
+              <h3>San Sebastian Parish Church</h3>
+
+              <p class="venue-address">
+                San Sebastian Village Parish<br>
+                Tarlac, 2300
+              </p>
+
+              <p class="venue-time">                
+                <span>DATE</span> March 6, 2027
+                <br>
+                <span>TIME</span> 3:00PM
+              </p>
+
+              <!-- Replace # with the exact Google Maps link. -->
+              <a class="button button-outline"
+                 href="https://maps.app.goo.gl/J3nZtcRpQp3q4GyR8"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                VIEW ON GOOGLE MAPS ↗
+              </a>
+            </div>
+          </article>
+
+
+          <!-- RECEPTION CARD -->
+          <article class="venue-card">
+            <div class="venue-image">
+              <!-- Replace with a reception venue photo. -->
+              <img
+                src="./images/reception.jpg"
+                alt="Wedding reception venue decorated for a celebration"
+                loading="lazy">
+              <span class="venue-image-label">THE RECEPTION</span>
+            </div>
+
+            <div class="venue-content">
+              <p class="eyebrow">LET THE CELEBRATION BEGIN</p>
+              <h3>THE BELLA PLAZA</h3>
+
+              <p class="venue-address">
+                47 David Avenue, cor. Dizon St., San Sebastian Village Gate 2<br>
+                Tarlac, 2300
+              </p>
+
+              <p class="venue-time">
+                <span>DATE</span> March 6, 2027
+                <br>
+                <span>TIME</span> 4:30PM
+              </p>
+
+              <!-- Replace with the exact reception Google Maps link. -->
+              <a class="button button-outline"
+                 href="https://maps.app.goo.gl/vSGC7SBqytGo1ig77"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                VIEW ON GOOGLE MAPS ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         5. DRESS CODE
+         ========================================== -->
+    <section class="dress-section section-padding" id="dress-code">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="section-heading">The Dress Code</h2>
+          <p class="section-description">
+            Come dressed with love. Help us make the day feel as
+            special and beautiful as the memories we'll create.
+          </p>
+        </div>
+
+        <div class="attire-grid">
+
+          <article class="attire-card">
+            <div class="attire-image-placeholder" role="img"
+                 aria-label="Image placeholder for Principal Sponsors attire">
+              <img src="./images/principalsponsors.png">
+            </div>
+<p>
+              Please wear elegant formal attire. Sponsors may follow
+              the designated motif and specific attire instructions
+              provided by the couple.
+            </p>
+          </article>
+
+          <article class="attire-card">
+            <div class="attire-image-placeholder" role="img"
+                 aria-label="Image placeholder for Ladies attire">
+              <img src="./images/ladies.png">
+            </div>
+<p>
+              Floor-length gowns, elegant dresses, or sophisticated
+              formal attire in the requested wedding colors.
+            </p>
+          </article>
+
+          <article class="attire-card">
+            <div class="attire-image-placeholder" role="img"
+                 aria-label="Image reference for Gentlemen attire">
+              <img
+                src="./images/gentlemen.png"
+                alt="Gentlemen wedding attire reference"
+                loading="lazy">
+            </div>
+<p>
+              A well-fitted suit, dress pants with a formal shirt,
+              or a traditional barong, as appropriate to the final
+              dress code instructions.
+            </p>
+          </article>
+        </div>
+
+        <!-- WEDDING COLOR PALETTE IMAGE
+             Upload your horizontal palette image as images/color-palette.png.
+        -->
+        <div class="palette-block">
+          <div class="palette-heading">
+            <div>
+              <p class="eyebrow">OUR WEDDING COLORS</p>
+              <h3>The Color Palette</h3>
+            </div>
+          </div>
+
+          <div class="palette-image-placeholder">
+            <img
+              src="./images/color-palette.png"
+              alt="Jayson and Zenia's wedding color palette"
+              loading="lazy">
+          </div>
+        </div>
+
+                <!-- DO'S AND DON'TS -->
+        <div class="attire-rules">
+          <div class="rules-column">
+            <h3><span aria-hidden="true">✓</span> The Do's</h3>
+            <ul>
+              <li>Wear formal and occasion-appropriate attire.</li>
+              <li>Follow the requested wedding color motif.</li>
+              <li>Choose comfortable, polished footwear.</li>
+              <li>Celebrate, smile, and enjoy the day with us.</li>
+            </ul>
+          </div>
+
+          <div class="rules-column">
+            <h3><span aria-hidden="true">×</span> The Don'ts</h3>
+            <ul>
+              <li>Please avoid white and off-white attire.</li>
+              <li>Avoid overly casual clothing and footwear.</li>
+              <li>Avoid colors specifically reserved for the couple or entourage.</li>
+              <li>Please respect the final dress code instructions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         6. WEDDING PARTY
+         ========================================== -->
+    <section class="party-section section-padding" id="wedding-party">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="section-heading">The Wedding Party</h2>
+          <p class="section-description">
+            The wonderful people standing beside us as we begin
+            this new chapter.
+          </p>
+        </div>
+
+        <div class="party-grid">
+
+          <details class="party-card">
+            <summary class="party-summary">
+              <span class="party-icon" aria-hidden="true">✳</span>
+              <span class="party-heading">
+                <span class="party-title">Principal Sponsors</span>
+                <span class="party-subtitle">OUR GUIDES &amp; WITNESSES</span>
+              </span>
+              <span class="party-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="party-content">
+              <ul class="name-list">
+                <li>[Sponsor Name 1]</li>
+                <li>[Sponsor Name 2]</li>
+                <li>[Sponsor Name 3]</li>
+                <li>[Sponsor Name 4]</li>
+                <li>[Add more names]</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="party-card">
+            <summary class="party-summary">
+              <span class="party-icon" aria-hidden="true">✳</span>
+              <span class="party-heading">
+                <span class="party-title">Bridal Entourage</span>
+                <span class="party-subtitle">BRIDE'S SIDE</span>
+              </span>
+              <span class="party-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="party-content">
+              <ul class="name-list">
+                <li><strong>Maid / Matron of Honor</strong></li>
+                <li>[Name]</li>
+                <li><strong>Bridesmaids</strong></li>
+                <li>[Name 1]</li>
+                <li>[Name 2]</li>
+                <li>[Name 3]</li>
+                <li>[Add more names]</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="party-card">
+            <summary class="party-summary">
+              <span class="party-icon" aria-hidden="true">✳</span>
+              <span class="party-heading">
+                <span class="party-title">Groom's Entourage</span>
+                <span class="party-subtitle">GROOM'S SIDE</span>
+              </span>
+              <span class="party-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="party-content">
+              <ul class="name-list">
+                <li><strong>Best Man</strong></li>
+                <li>[Name]</li>
+                <li><strong>Groomsmen</strong></li>
+                <li>[Name 1]</li>
+                <li>[Name 2]</li>
+                <li>[Name 3]</li>
+                <li>[Add more names]</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="party-card">
+            <summary class="party-summary">
+              <span class="party-icon" aria-hidden="true">✳</span>
+              <span class="party-heading">
+                <span class="party-title">Little &amp; Special Roles</span>
+                <span class="party-subtitle">OUR LITTLE HELPERS</span>
+              </span>
+              <span class="party-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="party-content">
+              <ul class="name-list">
+                <li><strong>Ring Bearer</strong></li>
+                <li>[Name]</li>
+                <li><strong>Coin Bearer</strong></li>
+                <li>[Name]</li>
+                <li><strong>Flower Girls</strong></li>
+                <li>[Name 1], [Name 2]</li>
+                <li><strong>Other Roles</strong></li>
+                <li>[Insert names and roles]</li>
+              </ul>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         7. RSVP
+         ========================================== -->
+    <section class="rsvp-section section-padding" id="rsvp">
+      <div class="container rsvp-layout">
+        <div class="rsvp-copy">
+          <p class="eyebrow">KINDLY REPLY</p>
+          <h2 class="section-heading">Will You Join Us?</h2>
+          <p>
+            Your presence would mean the world to us. Kindly let us
+            know if you'll be celebrating with us by submitting
+            your response below.
+          </p>
+
+          <div class="rsvp-date">
+            <span class="rsvp-date-number">06</span>
+            <div>
+              <strong>MARCH 2027</strong>
+              <span>Jayson &amp; Zenia's Wedding</span>
+            </div>
+          </div>
+
+          <p class="rsvp-deadline">
+            KINDLY RESPOND BY [INSERT RSVP DEADLINE]
+          </p>
+        </div>
+
+        <div class="rsvp-form-wrap">
+          <!--
+            FORM CONNECTION OPTIONS:
+
+            1. Formspree:
+               Create a form at https://formspree.io/
+               Change this form's opening tag to:
+               action="https://formspree.io/f/YOUR_FORM_ID"
+               method="POST"
+
+            2. Netlify Forms:
+               Add data-netlify="true" name="wedding-rsvp"
+               to the form and include:
+               <input type="hidden" name="form-name"
+                      value="wedding-rsvp">
+
+               Deploy the site on Netlify, not GitHub Pages,
+               to use Netlify Forms processing.
+
+            3. Google Forms:
+               Create a Google Form, then either embed its
+               published form in an iframe or map your fields
+               to a properly configured Google Apps Script.
+
+            GitHub Pages is static hosting; it does not process
+            form submissions by itself.
+          -->
+
+          <form id="rsvpForm" class="rsvp-form">
+            <div class="form-heading">
+              <span class="eyebrow">YOUR RESPONSE</span>
+              <h3>Kindly fill in the details</h3>
+            </div>
+
+            <div class="form-group">
+              <label for="fullName">Full Name <span>*</span></label>
+              <input type="text"
+                     id="fullName"
+                     name="fullName"
+                     placeholder="Enter your full name"
+                     autocomplete="name"
+                     required>
+            </div>
+
+            <fieldset class="form-group attendance-group">
+              <legend>Will you be attending? <span>*</span></legend>
+
+              <label class="radio-card">
+                <input type="radio"
+                       name="attendance"
+                       value="Joyfully Accepts"
+                       required>
+                <span class="radio-indicator"></span>
+                <span>
+                  <strong>Joyfully Accepts</strong>
+                  <small>Can't wait to celebrate!</small>
+                </span>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio"
+                       name="attendance"
+                       value="Regretfully Declines">
+                <span class="radio-indicator"></span>
+                <span>
+                  <strong>Regretfully Declines</strong>
+                  <small>Celebrating from afar.</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="guestCount">Number of Guests (Including You)</label>
+              <select id="guestCount" name="guestCount">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+              </select>
+              <small class="field-hint">
+                Please follow the number of seats allocated to your invitation.
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="dietaryNotes">
+                Dietary Restrictions / Special Notes
+              </label>
+              <textarea id="dietaryNotes"
+                        name="dietaryNotes"
+                        rows="4"
+                        placeholder="Allergies, dietary needs, or a note for us..."></textarea>
+            </div>
+
+            <button type="submit" class="button button-dark submit-button">
+              SUBMIT RSVP <span aria-hidden="true">↗</span>
+            </button>
+
+            <p class="form-message"
+               id="formMessage"
+               role="status"
+               aria-live="polite"></p>
+
+            <p class="form-privacy">
+              Your response is intended for wedding planning only.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         8. FAQS
+         ========================================== -->
+    <section class="faq-section section-padding" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <p class="eyebrow">A FEW HELPFUL DETAILS</p>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <p>
+            Everything you might need to know before joining
+            us on our special day.
+          </p>
+          <a href="#rsvp" class="text-link">READY TO RSVP? ↗</a>
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>
+              <span>Can I bring a plus one?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We are keeping our celebration intimate. Please refer
+                to your invitation for the number of seats reserved
+                for you. If you have questions, contact the couple
+                before confirming your attendance.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>What time should I arrive?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We recommend arriving 30 minutes before the ceremony
+                begins so you have time to settle in. The final
+                ceremony time will be shared in the wedding details.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Is there parking available at the venue?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Parking information is being finalized. Please check
+                back for details about parking availability and any
+                nearby alternatives.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Are children allowed?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Please check your invitation for the guests included
+                in your reservation. If you have questions about
+                children attending, contact us before submitting
+                your RSVP.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Will the ceremony be unplugged?</span>
+              <span class="faq-symbol" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We invite everyone to be present and enjoy the moment.
+                Please keep phones silent and follow the couple's
+                instructions about photography during the ceremony.
+                We will share our final unplugged ceremony policy
+                before the wedding.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a href="#home" class="footer-monogram" aria-label="Back to top"><img src="./images/monowhite.png" alt="Jayson and Zenia monogram"></a>
+      <p>Two hearts. One love. Forever begins here.</p>
+      <p class="footer-date">MARCH 06, 2027</p>
+      <a href="#top" class="back-to-top">BACK TO TOP ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <p>Made with love for Jayson &amp; Zenia.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
