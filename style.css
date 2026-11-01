@@ -1811,11 +1811,20 @@ a[href="#top"].back-to-top {
 .countdown-section { background-color: #f9d8c8; }
 .details-section { background-color: #f6dce2; }
 .dress-section .palette-heading { text-align: center; }
+/* Gentle, irregular watercolor color spots inspired by the wedding artwork.
+   CSS-only so the section stays lightweight and responsive. */
 .party-section {
-  background-color: #e8e5f6;
-  background-image: radial-gradient(ellipse at 12% 20%, rgba(181, 220, 245, .72), transparent 55%),
-                    radial-gradient(ellipse at 88% 72%, rgba(204, 186, 239, .72), transparent 58%),
-                    radial-gradient(ellipse at 50% 48%, rgba(246, 248, 255, .55), transparent 65%);
+  background-color: #fbfaf5;
+  background-image:
+    radial-gradient(ellipse 15% 17% at 5% 18%, rgba(237, 156, 158, .30) 0%, rgba(237, 156, 158, .16) 43%, transparent 78%),
+    radial-gradient(ellipse 20% 15% at 22% 82%, rgba(248, 188, 165, .27) 0%, rgba(248, 188, 165, .12) 48%, transparent 78%),
+    radial-gradient(ellipse 16% 25% at 31% 12%, rgba(251, 216, 126, .27) 0%, rgba(251, 216, 126, .13) 45%, transparent 82%),
+    radial-gradient(ellipse 17% 19% at 54% 79%, rgba(196, 219, 179, .30) 0%, rgba(196, 219, 179, .14) 45%, transparent 83%),
+    radial-gradient(ellipse 19% 17% at 74% 18%, rgba(185, 211, 234, .31) 0%, rgba(185, 211, 234, .13) 47%, transparent 83%),
+    radial-gradient(ellipse 17% 22% at 94% 63%, rgba(207, 184, 227, .34) 0%, rgba(207, 184, 227, .15) 44%, transparent 82%),
+    radial-gradient(ellipse 12% 13% at 85% 93%, rgba(235, 166, 184, .20) 0%, transparent 85%),
+    radial-gradient(ellipse 13% 16% at 6% 93%, rgba(183, 210, 180, .18) 0%, transparent 85%);
+  background-repeat: no-repeat;
 }
 /* A fixed photo frame prevents gallery images from changing size. */
 .story-image { height: clamp(320px, 39vw, 490px); min-height: 0; }
