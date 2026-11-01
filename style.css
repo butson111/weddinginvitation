@@ -1872,3 +1872,22 @@ a[href="#top"].back-to-top {
     background-position: center center;
   }
 }
+
+
+/* THE WEDDING DETAILS - DESKTOP */
+.details-section {
+  background-color: #f6dce2;
+  background-image: url("./images/weddingdetails-desktop.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* THE WEDDING DETAILS - MOBILE */
+@media (max-width: 760px) {
+  .details-section {
+    background-image: url("./images/weddingdetails-mobile.png");
+    background-size: cover;
+    background-position: center top;
+  }
+}
