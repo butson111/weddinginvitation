@@ -1854,3 +1854,21 @@ a[href="#top"].back-to-top {
     background-position: center center;
   }
 }
+
+
+/* HOW IT ALL BEGAN - DESKTOP */
+.story-section {
+  background-color: #f7f7f2;
+  background-image: url("./images/story-desktop.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* HOW IT ALL BEGAN - MOBILE */
+@media (max-width: 760px) {
+  .story-section {
+    background-image: url("./images/story-mobile.png");
+    background-position: center center;
+  }
+}
