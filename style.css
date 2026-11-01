@@ -1886,8 +1886,29 @@ a[href="#top"].back-to-top {
 /* THE WEDDING DETAILS - MOBILE */
 @media (max-width: 760px) {
   .details-section {
-    background-image: url("./images/weddingdetails-mobile.png");
+    background-image: url("./images/weddingdetails-mobile.jpg");
     background-size: cover;
     background-position: center top;
+  }
+}
+
+
+
+/* WEDDING PARTY - DESKTOP */
+.party-section {
+  background-color: #f7f7f2;
+  background-image: url("./images/party-desktop.png");
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* WEDDING PARTY - MOBILE */
+@media (max-width: 760px) {
+  .party-section {
+    background-image: url("./images/party-mobile.png");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 }
