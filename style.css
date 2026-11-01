@@ -1849,7 +1849,7 @@ a[href="#top"].back-to-top {
 ===================================== */
 @media (max-width: 760px) {
   .countdown-section {
-    background-image: url("./images/countdown-mobile.png");
+    background-image: url("./images/countdown-mobile.jpg");
     background-size: cover;
     background-position: center center;
   }
