@@ -1874,21 +1874,25 @@ a[href="#top"].back-to-top {
 }
 
 
-/* THE WEDDING DETAILS - DESKTOP */
+/* THE WEDDING DETAILS - DESKTOP
+   Soft ivory overlay matches the Wedding Party background treatment. */
 .details-section {
   background-color: #f6dce2;
-  background-image: url("./images/weddingdetails-desktop.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(rgba(247, 247, 242, 0.76), rgba(247, 247, 242, 0.76)),
+    url("./images/weddingdetails-desktop.png");
+  background-size: cover, cover;
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 /* THE WEDDING DETAILS - MOBILE */
 @media (max-width: 760px) {
   .details-section {
-    background-image: url("./images/weddingdetails-mobile.jpg");
-    background-size: cover;
-    background-position: center top;
+    background-image:
+      linear-gradient(rgba(247, 247, 242, 0.80), rgba(247, 247, 242, 0.80)),
+      url("./images/weddingdetails-mobile.jpg");
+    background-position: center center, center top;
   }
 }
 
