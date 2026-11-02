@@ -487,3 +487,20 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .js-motion .reveal { opacity: 1; transform: none; }
   .countdown-petal { display: none; }
 }
+
+
+.faq-section {
+  background-image: url("./images/faq-desktop.jpg");
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: repeat-y;
+}
+
+@media (max-width: 760px) {
+  .faq-section {
+    background-image: url("./images/faq-mobile.jpg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+  }
+}
