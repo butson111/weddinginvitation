@@ -358,33 +358,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .rules-column ul { margin: 0; padding-left: 19px; }
 .rules-column li { margin: 0 0 9px; padding-left: 2px; color: var(--muted); font-size: 12px; line-height: 1.85; }
 
-/* Wedding Party — soft white typography for floral sage backgrounds */
+/* Wedding Party — accessible, responsive live typography */
 .party-section {
-  background-color: #dfe9d8;
-  background-image: linear-gradient(rgba(96,112,86,.18),rgba(96,112,86,.18)), url("./images/party-desktop.png");
+  background-color: var(--page);
+  background-image: linear-gradient(rgba(247,247,242,.82),rgba(247,247,242,.82)), url("./images/party-desktop.png");
   background-size: 100% 100%, 100% auto;
   background-position: center top;
   background-repeat: no-repeat, repeat-y;
 }
-/* Original neutral ink colors restored for Wedding Party text. */
-.party-section .section-heading { color: var(--ink); }
-.party-section .section-description { color: var(--muted); }
-.party-section .eyebrow { color: var(--accent-dark); }
-.party-script, .party-subtitle { color: #49423a; }
-.party-names { color: #48453f; }
 .party-list { width: min(100%, 900px); margin: 0 auto; text-align: center; }
 .party-group { padding: clamp(30px, 4.5vw, 58px) 0; }
 .party-group + .party-group { border-top: 1px solid rgba(100,92,79,.20); }
 .party-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(22px, 5vw, 75px); align-items: start; }
 .party-column { min-width: 0; }
-.party-script { font-family: "Allura", cursive; font-weight: 400; font-size: clamp(34px, 4vw, 47px); line-height: 1.22; letter-spacing: 0; margin: 0 0 8px; }
-.party-names { margin: 0; padding: 0; list-style: none; font-family: "Montserrat", sans-serif; font-weight: 300; font-size: clamp(14px, 1.45vw, 17px); line-height: 1.8; }
+.party-script { font-family: "Allura", cursive; font-weight: 400; font-size: clamp(34px, 4vw, 47px); line-height: 1.22; letter-spacing: 0; margin: 0 0 8px; color: #49423a; }
+.party-names { margin: 0; padding: 0; list-style: none; font-family: "Montserrat", sans-serif; font-weight: 300; font-size: clamp(14px, 1.45vw, 17px); line-height: 1.8; color: #48453f; }
 .party-names li { margin-bottom: 5px; overflow-wrap: anywhere; }
 .party-group--sponsors > .party-script { margin-bottom: 18px; }
 .party-role + .party-role { margin-top: 27px; }
 .party-pair--little { max-width: 670px; margin-inline: auto; }
 @media (max-width: 800px) {
-  .party-section { background-image: linear-gradient(rgba(96,112,86,.16),rgba(96,112,86,.16)), url("./images/party-mobile.png"); }
+  .party-section { background-image: linear-gradient(rgba(247,247,242,.85),rgba(247,247,242,.85)), url("./images/party-mobile.png"); }
   .party-list { max-width: 620px; }
   .party-group { padding-block: 31px; }
   .party-pair { gap: 15px; }
@@ -585,6 +579,18 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
     background-image: url("./images/rsvp-mobile.jpg");
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+
+/* Wedding Party mobile background fix — remove faded overlay and stop repeating artwork */
+@media (max-width: 800px) {
+  .party-section {
+    background-color: #f7f7f2;
+    background-image: url("./images/party-mobile.png");
+    background-size: 100% auto;
+    background-position: center top;
     background-repeat: no-repeat;
   }
 }
