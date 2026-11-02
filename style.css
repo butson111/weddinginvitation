@@ -1922,3 +1922,16 @@ a[href="#top"].back-to-top {
     background-repeat: no-repeat, repeat-y;
   }
 }
+
+
+
+/* HOW IT ALL BEGAN — MOBILE BACKGROUND FIX */
+@media (max-width: 760px) {
+  .story-section {
+    background-image: url("./images/story-mobile.png");
+    background-color: #fff0ba;
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+  }
+}
