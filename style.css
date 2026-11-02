@@ -497,7 +497,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
       rgba(247, 247, 242, 0.30),
       rgba(247, 247, 242, 0.30)
     ),
-    url("./images/faq-desktop.png");
+    url("./images/faq-desktop.jpg");
 
   background-size: cover;
   background-position: center center;
@@ -512,7 +512,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
         rgba(247, 247, 242, 0.35),
         rgba(247, 247, 242, 0.35)
       ),
-      url("./images/faq-mobile.png");
+      url("./images/faq-mobile.jpg");
 
     background-size: cover;
     background-position: center top;
