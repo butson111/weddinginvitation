@@ -445,7 +445,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .venue-image { height: clamp(235px,50vw,330px); }
   .attire-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .faq-layout { gap: 32px; }
-  .countdown-section { background-image: url("./images/countdown-mobile.png"); }
+  .countdown-section { background-image: url("./images/countdown-mobile.jpg"); }
   .story-section { background-color: #fff0ba; background-image: url("./images/story-mobile.png"); background-size: 100% auto; background-position: center top; background-repeat: repeat-y; }
   .details-section {
     background-image: linear-gradient(rgba(247,247,242,.80),rgba(247,247,242,.80)),url("./images/weddingdetails-mobile.jpg");
