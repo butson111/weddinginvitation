@@ -519,3 +519,12 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
     background-repeat: no-repeat;
   }
 }
+
+
+/* FAQ — DESKTOP SPACING */
+@media (min-width: 761px) {
+  .faq-section {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+}
