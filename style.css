@@ -489,18 +489,33 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 }
 
 
+/* FAQ — DESKTOP */
 .faq-section {
-  background-image: url("./images/faq-desktop.jpg");
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: repeat-y;
+  background-color: #f7f7f2;
+  background-image:
+    linear-gradient(
+      rgba(247, 247, 242, 0.30),
+      rgba(247, 247, 242, 0.30)
+    ),
+    url("./images/faq-desktop.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
+/* FAQ — MOBILE */
 @media (max-width: 760px) {
   .faq-section {
-    background-image: url("./images/faq-mobile.jpg");
-    background-size: 100% auto;
+    background-image:
+      linear-gradient(
+        rgba(247, 247, 242, 0.35),
+        rgba(247, 247, 242, 0.35)
+      ),
+      url("./images/faq-mobile.png");
+
+    background-size: cover;
     background-position: center top;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
   }
 }
