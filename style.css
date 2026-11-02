@@ -529,3 +529,23 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
     height: clamp(335px, 100vw, 600px);
   }
 }
+
+
+/* RSVP — DESKTOP */
+.rsvp-section {
+  background-color: #f7f7f2;
+  background-image: url("./images/rsvp-desktop.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* RSVP — MOBILE */
+@media (max-width: 800px) {
+  .rsvp-section {
+    background-image: url("./images/rsvp-mobile.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
