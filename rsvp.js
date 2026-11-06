@@ -1,6 +1,6 @@
 // Paste your deployed Apps Script Web App URL (ending in /exec) here.
 // The RSVP form itself runs inside Apps Script so Google Sheets can confirm saves.
-const RSVP_WEB_APP_URL = '';
+const RSVP_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwDT7SIV1BrXZ74I1X5HgmrXhglqCs-j9kmo9JQRzc7jA6mQnBLPNlp7JiNIuNSaKNuUA/exec';
 
 const statusText = document.getElementById('connectionStatus');
 const launchButton = document.getElementById('openInvitation');
