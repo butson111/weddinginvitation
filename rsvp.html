@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>RSVP | Jayson &amp; Zenia</title>
+  <meta name="description" content="Please confirm your attendance at Jayson and Zenia's wedding on March 6, 2027.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rsvp.css?v=20261120-1">
+  <script src="rsvp.js?v=20261120-1" defer></script>
+</head>
+<body>
+  <a class="return-link" href="index.html#rsvp">← Wedding website</a>
+  <main class="page">
+    <div class="branding">
+      <img src="images/monoblack.png" alt="Jayson and Zenia monogram">
+      <span>THE WEDDING OF</span>
+      <h1>Jayson &amp; Zenia</h1>
+      <p>MARCH 06, 2027</p>
+    </div>
+    <section class="form-wrap" aria-label="Wedding RSVP">
+      <header>
+        <h2>Kindly RSVP</h2>
+        <p>Please RSVP on or before January 4, 2027</p>
+      </header>
+
+      <div class="rsvp-card" id="rsvpCard">
+        <div class="symbol" aria-hidden="true">✉</div>
+        <div id="alertMessage" class="notice" role="status" aria-live="polite" hidden></div>
+
+        <div id="stepSearch" class="step">
+          <h3>Find your invitation</h3>
+          <p class="intro">Enter the full name of the designated RSVP contact for your invitation.</p>
+          <form id="searchForm" novalidate>
+            <label for="guestSearch">Full name</label>
+            <input id="guestSearch" name="guestSearch" type="text" placeholder="e.g. Marie Reyes" autocomplete="name" minlength="2" maxlength="100" required>
+            <button class="primary" id="searchButton" type="submit">Find my invitation</button>
+          </form>
+        </div>
+
+        <div id="stepMatches" class="step" hidden>
+          <h3>Is this your invitation?</h3>
+          <div id="matchList" class="match-list"></div>
+          <button class="text-button" id="backToSearch" type="button">← Search a different name</button>
+        </div>
+
+        <div id="stepGuests" class="step" hidden>
+          <h3 id="familyTitle">YOU ARE INVITED</h3>
+          <p class="intro">Toggle to confirm your attendance.</p>
+          <form id="responseForm" novalidate>
+            <div id="guestList" class="guest-list"></div>
+            <div class="contact-field">
+              <label for="contactNumber">Contact number <span class="required-mark" aria-hidden="true">*</span></label>
+              <input id="contactNumber" name="contactNumber" type="tel" inputmode="tel" autocomplete="tel"
+                     placeholder="e.g. 0917 123 4567" maxlength="24" required aria-describedby="contactNumberHelp">
+              <p id="contactNumberHelp" class="hint">Required — one contact number for your invitation.</p>
+            </div>
+            <div id="extraGuestSection" class="extra-guest-section" hidden>
+              <div class="extra-title">Optional replacement guests</div>
+              <p id="extraGuestDescription" class="hint"></p>
+              <div id="extraGuestList"></div>
+            </div>
+            <div class="confirmation-box">
+              <label class="confirmation-label"><input id="confirmSelection" type="checkbox" required> I have reviewed the attendance choices above.</label>
+            </div>
+            <button class="primary" id="submitButton" type="submit">Submit our RSVP</button>
+          </form>
+          <button class="text-button" id="backToMatches" type="button">← This isn't my invitation</button>
+        </div>
+
+        <div id="stepFinished" class="step finished" hidden>
+          <div id="finishedSymbol" class="finished-symbol" aria-hidden="true">♡</div>
+          <h3 id="finishedTitle">Thank you!</h3>
+          <p id="finishedMessage"></p>
+          <a class="primary" href="index.html">Back to wedding website</a>
+        </div>
+      </div>
+      <p class="contact-note">Need to make a change after submitting? Please reach out to Jayson or Zenia directly.</p>
+    </section>
+  </main>
+</body>
+</html>

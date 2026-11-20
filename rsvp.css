@@ -1,0 +1,108 @@
+:root{color-scheme:light;--ink:#34483b;--evergreen:#294b39;--sage:#627569;--line:#c1cdbd;--paper:#faf9f3;--highlight:#f0f3e9}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100vh;background:#e5eff6 url('images/rsvp-page.webp') center/cover fixed no-repeat;color:var(--ink);font:400 13px/1.7 Montserrat,sans-serif}
+a{color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.return-link{position:fixed;top:24px;left:24px;z-index:3;background:#fffdf3eb;color:#254735;padding:9px 17px;border:1px solid var(--line);border-radius:30px;text-decoration:none}
+.page{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,510px);gap:clamp(30px,6vw,100px);align-items:center;padding:85px clamp(28px,7vw,130px)}
+.branding{text-align:center;background:#fffdf4c9;border:1px solid #fffdf6;padding:60px 22px;border-radius:230px 230px 8px 8px;backdrop-filter:blur(3px);box-shadow:0 16px 45px #476b5820}
+.branding img{display:block;width:110px;height:110px;object-fit:contain;margin:auto auto 12px}
+.branding span,.form-wrap header span{font-size:10px;letter-spacing:.2em}
+.branding h1{font:400 clamp(40px,5vw,76px)/1.25 Allura,cursive;margin:12px 0}
+.branding p{font-size:11px;letter-spacing:.17em}
+.form-wrap{width:100%;max-width:510px;margin:auto}
+.form-wrap header{text-align:center;background:#fffdf4ed;padding:20px}
+.form-wrap header h2{font:400 43px/1.2 Allura,cursive;margin:7px 0}
+.form-wrap header p{margin:0;font-size:11px}
+.rsvp-card{text-align:center;background:var(--paper);border:1px solid #bfcabf;box-shadow:0 14px 48px #254b3340;padding:clamp(24px,4vw,42px);min-height:270px}
+.symbol{font:32px/1.4 Georgia,serif;margin-bottom:8px}
+.step h3{font:400 30px/1.3 'Playfair Display',serif;margin:7px 0 14px}
+.intro{color:var(--sage);margin:0 auto 22px;max-width:350px;font-size:12px}
+.step form{text-align:left}
+.step label:not(.attendance-name):not(.confirmation-label){display:block;font-size:11px;letter-spacing:.07em;margin:0 0 7px;font-weight:600}
+input[type=text]{display:block;width:100%;min-height:47px;border:1px solid var(--line);border-radius:0;background:#fffefa;color:var(--ink);outline:none;padding:11px 13px;font-size:13px}
+input[type=text]:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #587c62;outline-offset:3px}
+.primary,.secondary{display:flex;align-items:center;justify-content:center;width:100%;min-height:47px;padding:11px;text-align:center;font-weight:500;border-radius:0;text-decoration:none}
+.primary{background:var(--evergreen);color:#fff;border:1px solid var(--evergreen)}
+.primary:hover:not(:disabled){background:#193527}
+.secondary{background:transparent;color:var(--evergreen);border:1px solid var(--line)}
+.secondary:hover{background:var(--highlight)}
+#searchForm .primary{margin-top:15px}
+.hint{color:var(--sage);font-size:11px;line-height:1.6}
+#stepSearch>.hint{margin:18px 0 0}
+.text-button{border:0;background:transparent;color:var(--sage);text-decoration:underline;text-underline-offset:3px;font-size:12px;margin-top:18px;padding:7px}
+.match-list{display:grid;gap:10px}
+.match-option{text-align:left;background:#fffefa;border:1px solid var(--line);padding:15px 16px;width:100%;color:var(--ink)}
+.match-option:hover{background:var(--highlight);border-color:#77917a}
+.match-option strong{display:block;font-size:13px;font-weight:600}
+.match-option span{font-size:11px;color:var(--sage)}
+.eyebrow{font-size:10px;letter-spacing:.15em;color:var(--sage)}
+.guest-list{border-top:1px solid var(--line);margin:0 0 14px}
+.guest-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.attendance-name{text-align:left;flex:1;font-weight:500;font-size:13px;line-height:1.5}
+.guest-row.is-declined .named-invitee{text-decoration:line-through;color:#a0a6a1}
+/* Unnamed seats look like an editable name in the same position as a named guest. */
+.guest-row-open .seat-name-input{
+  display:block;width:100%;min-height:40px;padding:8px 2px;
+  border:0;border-bottom:1px dashed #b8c6b7;
+  border-radius:0;background:transparent;
+  color:var(--ink);font-size:13px;font-weight:500;line-height:1.5;
+}
+.guest-row-open .seat-name-input::placeholder{
+  color:#929f96;opacity:.72;font-weight:400;
+}
+.guest-row-open .seat-name-input:focus-visible{
+  outline:2px solid #587c62;outline-offset:2px;
+  background:#fffefa;
+}
+.guest-row.is-declined .seat-name-input{
+  text-decoration:line-through;color:#969e99;
+  background:transparent;border-bottom-color:#d1d7d0;
+}
+.guest-row.is-declined .seat-name-input::placeholder{
+  text-decoration:line-through;color:#a5afa9;opacity:.75;
+}
+.seat-name-input[aria-invalid=true],.extra-name[aria-invalid=true]{border-color:#b86456;outline:2px solid #dcb0a9;outline-offset:1px}
+.switch{position:relative;display:inline-flex;flex-shrink:0;align-items:center;gap:8px;cursor:pointer}
+.switch-label{font-size:10px;letter-spacing:.06em;color:var(--sage);min-width:24px;text-align:right}
+.switch input{position:absolute;width:1px;height:1px;opacity:0}
+.switch-track{width:44px;height:25px;border-radius:20px;background:#a7aeaa;position:relative;transition:background .18s}
+.switch-track:after{content:"";position:absolute;left:3px;top:3px;width:19px;height:19px;border-radius:100%;background:white;transition:transform .18s;box-shadow:0 1px 3px #0002}
+.switch input:checked+.switch-track{background:#52775d}
+.switch input:checked+.switch-track:after{transform:translateX(19px)}
+.switch input:focus-visible+.switch-track{outline:2px solid #45694f;outline-offset:3px}
+.extra-guest-section{text-align:left;background:#f1f5ee;border:1px solid #d0ddd0;padding:17px;margin:19px 0}
+.extra-title{font:400 21px/1.3 'Playfair Display',serif}
+.extra-guest-section .hint{margin:5px 0 12px}
+.extra-row{display:block;margin-bottom:13px}
+.extra-row:last-child{margin-bottom:0}
+.extra-label{display:block;margin-bottom:5px;font-size:11px;font-weight:600;letter-spacing:.03em}
+.extra-row input{width:100%}
+.confirmation-box{text-align:left;padding:13px 0 16px}
+.confirmation-label{display:flex;align-items:flex-start;gap:9px;font-size:11px;line-height:1.6}
+.confirmation-label input{accent-color:var(--evergreen);margin:3px 0 0}
+.finished-symbol{font-size:38px;color:#66846b}
+.finished p{margin:0 0 22px;color:var(--sage);font-size:12px;line-height:1.9}
+.notice{padding:11px 13px;margin:0 0 18px;border:1px solid #ccaaa2;background:#fff3ef;color:#7c493f;text-align:left;font-size:12px}
+.notice.info{border-color:#bdcebc;background:#f0f5ee;color:#36543e}
+.contact-note{font-size:11px;text-align:center;padding:12px;color:#2f4238;background:#fffdf4bb;margin:0}
+@media(max-width:800px){body{background-attachment:scroll;background-position:center top}.page{display:flex;flex-direction:column;gap:18px;padding:84px 14px 42px}.return-link{position:absolute;top:13px;left:13px}.branding{width:100%;max-width:510px;padding:13px 20px;border-radius:110px 110px 8px 8px}.branding img{width:62px;height:62px}.branding h1{font-size:45px;margin:0}.branding p{margin:3px}.form-wrap header{padding:13px}.form-wrap header h2{font-size:37px}.rsvp-card{padding:26px 18px}.step h3{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.switch-track,.switch-track:after{transition:none}}
+/* Override the generic form-label rule for the attendance toggle. */
+#guestList label.switch{display:inline-flex;align-items:center;gap:8px;margin:0;font-size:11px;letter-spacing:normal;font-weight:400}
+
+/* RSVP refinements: pink script heading, single finishing icon, contact field. */
+.form-wrap header h2 { color: #ac3557; font-size: clamp(40px, 4vw, 51px); }
+.rsvp-card.is-finished > .symbol { display: none; }
+#familyTitle { color: #ac3557; font: 400 clamp(39px, 5vw, 49px)/1.12 Allura, cursive; letter-spacing: .025em; }
+.contact-field { text-align: left; margin: 16px 0 12px; }
+.contact-field > label { display: block; margin: 0 0 7px; font-size: 11px; font-weight: 600; letter-spacing: .05em; }
+.contact-field input[type=tel] { display: block; width: 100%; min-height: 47px; border: 1px solid var(--line); border-radius: 0; background: #fffefa; color: var(--ink); outline: none; padding: 11px 13px; font-size: 13px; }
+.contact-field input[type=tel]:focus-visible { outline: 2px solid #587c62; outline-offset: 3px; }
+.contact-field input[type=tel][aria-invalid=true] { border-color: #b86456; outline: 2px solid #dcb0a9; outline-offset: 1px; }
+.contact-field .hint { margin: 5px 0 0; }
+.required-mark { color: #af4760; }
+.extra-row .extra-label { display: block; margin-bottom: 6px; }

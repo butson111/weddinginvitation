@@ -1,0 +1,1056 @@
+/* JAYSON & ZENIA — WEDDING WEBSITE | Spring / summer neutrals */
+:root {
+  --page: #f7f7f2;
+  --paper: #fcfaf6;
+  --surface: #ffffff;
+  --ink: #443e38;
+  --muted: #716a63;
+  --line: #dcd6ce;
+  --accent: #5d6659;
+  --accent-dark: #495547;
+  --drawer: #f8e8a5; /* butter yellow */
+  --drawer-ink: #453d31;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --container: 1160px;
+  --section-space: clamp(72px, 8vw, 110px);
+  --ease: 250ms ease;
+}
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+/* Continuous natural scrolling (no section snapping on any screen). */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page);
+  font: 400 15px/1.8 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+body.menu-open, body:has(.story-dialog[open]) { overflow: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button { color: inherit; cursor: pointer; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 4px;
+}
+[hidden] { display: none !important; }
+.container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
+.section-padding { padding-block: var(--section-space); }
+
+/* SMART FULL-SCREEN SECTIONS — main website only.
+   Use minimum height, not a fixed height: Wedding Party, Dress Code and FAQs
+   can grow naturally and guests can read everything before continuing. */
+main > section,
+main > .opening-sections > section {
+  min-height: 100vh;  /* Fallback for older browsers */
+  min-height: 100svh; /* Stable viewport height on mobile Safari/Chrome */
+}
+
+/* Center sections that fit; tall sections continue to scroll normally. */
+main > section:not(.hero),
+main > .opening-sections > section:not(.hero) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main > .opening-sections > .hero {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+.section-intro { max-width: 660px; margin: 0 auto 52px; text-align: center; }
+.eyebrow, .story-number {
+  color: var(--accent-dark);
+  font: 700 10px/1.5 var(--sans);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.eyebrow { margin: 0 0 15px; }
+.section-heading {
+  margin: 0;
+  color: #ac3557; /* Same pink and Allura script as Jayson / Zenia on the hero. */
+  font: 400 clamp(45px, 6.1vw, 69px)/1.14 "Allura", "Brush Script MT", cursive;
+  letter-spacing: 0;
+  text-shadow: 0 1px 2px #fffaf8, 0 2px 13px rgba(255,253,250,.77);
+}
+.section-description {
+  max-width: 560px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.button, .calendar-btn {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  font: 600 11px/1.5 var(--sans);
+  letter-spacing: .1em;
+  text-align: center;
+  transition: background-color var(--ease), color var(--ease), border-color var(--ease);
+}
+.button-dark { color: white; background: #5b554f; border-color: #5b554f; }
+.button-dark:hover { background: #45403a; border-color: #45403a; }
+.button-light { color: var(--ink); background: #f5f1e9; border-color: #f5f1e9; }
+.button-light:hover { background: #e5dfd5; border-color: #e5dfd5; }
+.button-outline { color: var(--ink); background: transparent; border-color: #918a81; }
+.button-outline:hover { background: #e9e4dc; border-color: #777067; }
+
+/* Floating transparent monogram & hamburger, on mobile AND desktop */
+.site-header {
+  position: fixed;
+  z-index: 100;
+  inset: 0 0 auto;
+  background: transparent;
+  pointer-events: none;
+}
+.navbar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.brand, .menu-toggle { pointer-events: auto; }
+.brand { width: 74px; height: 74px; display: inline-flex; align-items: center; justify-content: center; }
+.brand img { width: 100%; height: 100%; object-fit: contain; }
+.menu-toggle {
+  position: relative;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: #34322f;
+  box-shadow: 0 1px 3px rgba(255,255,255,.48);
+  transition: transform 280ms ease, opacity 200ms ease, background-color 200ms ease;
+}
+.site-header.is-scrolled .menu-toggle span { background: var(--ink); box-shadow: 0 1px 3px rgba(255,255,255,.45); }
+.site-header.menu-is-open .menu-toggle span { background: var(--drawer-ink); box-shadow: none; }
+.site-header.menu-is-open .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.site-header.menu-is-open .menu-toggle span:nth-child(2) { opacity: 0; }
+.site-header.menu-is-open .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.site-header.menu-is-open .brand { pointer-events: none; }
+.nav-backdrop {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  background: rgba(30, 31, 27, .54);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 350ms ease, visibility 350ms ease;
+}
+.nav-drawer {
+  position: fixed;
+  z-index: 2;
+  inset: 0 0 0 auto;
+  display: flex;
+  width: min(76vw, 465px);
+  height: 100dvh;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: clamp(110px, 15vh, 145px) clamp(28px, 4.6vw, 55px) 38px;
+  background: var(--drawer);
+  color: var(--drawer-ink);
+  box-shadow: -12px 0 34px rgba(0,0,0,.1);
+  transform: translateX(102%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 470ms cubic-bezier(.22,.75,.25,1), visibility 470ms ease;
+}
+.site-header.menu-is-open .nav-backdrop { opacity: 1; visibility: visible; pointer-events: auto; }
+.site-header.menu-is-open .nav-drawer { transform: translateX(0); visibility: visible; pointer-events: auto; }
+.nav-overline, .nav-footnote { margin: 0; color: #62513a; font-size: 10px; letter-spacing: .2em; }
+.nav-overline { padding-bottom: 22px; border-bottom: 1px solid rgba(76,62,42,.24); }
+.nav-links { display: flex; flex-direction: column; gap: clamp(13px, 2.5vh, 27px); margin: 26px 0 40px; padding: 0; list-style: none; }
+.nav-links a {
+  display: inline-block;
+  color: var(--drawer-ink);
+  font: 400 clamp(23px, 2.7vw, 30px)/1.35 var(--serif);
+  transition: color var(--ease), opacity var(--ease);
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: #8b573f; }
+.nav-footnote { margin-top: auto; }
+
+/* ONE SHARED BACKGROUND for Hero + Countdown + Our Story.
+   The artwork fills the ENTIRE combined region, not each section separately.
+   Background-size: 100% 100% keeps all edges visible; artwork may resize
+   slightly on screens with different proportions (no crop, no tiling).
+   Canva: desktop 1920x3000; mobile 1080x6800. */
+.opening-sections {
+  background-color: #fbf6f8;
+  background-image: url("./images/hero-desktop.webp");
+  background-position: center top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Let the parent background show continuously through all three panels. */
+.opening-sections > .hero,
+.opening-sections > .countdown-section,
+.opening-sections > .story-section {
+  background: transparent;
+}
+
+/* Hero text and layout sit on the first part of the shared artwork. */
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  color: #483c34;
+}
+.hero-content {
+  display: flex;
+  width: min(100%, 1280px);
+  min-height: 100vh;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  padding: 110px 26px 80px;
+  text-align: center;
+}
+.hero-invitation {
+  width: min(100%, 780px);
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+  animation: hero-content-fade-in 1350ms 350ms cubic-bezier(.22,.61,.36,1) both;
+}
+/* Keep the entrance animation paused until the invitation is opened. */
+html.invitation-active .hero-invitation { animation-play-state: paused; }
+@keyframes hero-content-fade-in {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.hero-eyebrow {
+  margin: 0 0 15px;
+  color: #514c3d;
+  font: 500 clamp(12px, 1.25vw, 15px)/1.4 "Montserrat", var(--sans);
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(255,255,255,.95), 0 1px 14px #fffaf8;
+}
+.hero-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+.hero-name {
+  display: block;
+  color: #ac3557;
+  font: 400 clamp(73px, 8.4vw, 119px)/1 "Allura", "Brush Script MT", cursive;
+  letter-spacing: -.008em;
+  text-shadow: 0 1px 2px #fffaf8, 0 2px 13px rgba(255,253,250,.86);
+}
+.hero-and {
+  display: block;
+  margin: -2px 0 -2px;
+  color: #62573c;
+  font: italic 400 clamp(21px, 2.2vw, 29px)/1.25 var(--serif);
+  text-shadow: 0 1px 10px #fffaf8;
+}
+.hero-tagline {
+  max-width: 570px;
+  margin: 0 auto;
+  color: #40382e;
+  font: 400 clamp(15px, 1.65vw, 20px)/1.5 var(--serif);
+  text-wrap: balance;
+  text-shadow: 0 1px 2px #fffdfb, 0 1px 12px rgba(255,255,255,.92);
+}
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  margin: 21px auto 18px;
+  background: #796447;
+}
+.hero-date {
+  margin: 0 0 24px;
+  color: #463b2f;
+  font: 600 clamp(12px, 1.35vw, 16px)/1.5 var(--serif);
+  letter-spacing: .19em;
+  text-shadow: 0 1px 2px #fffdfb, 0 1px 11px rgba(255,255,255,.94);
+}
+/* A gentle scroll gesture replaces the former hero CTA on all devices. */
+.hero-scroll-cue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  color: rgba(92, 75, 77, .64);
+  font: 400 10px/1.6 "Montserrat", var(--sans);
+  letter-spacing: .2em;
+  text-shadow: 0 1px 8px #fffaf8;
+  user-select: none;
+}
+.hero-scroll-arrow {
+  font: 300 26px/1.1 "Montserrat", var(--sans);
+  opacity: .66;
+  animation: cue-lift 2.4s ease-in-out infinite;
+}
+@keyframes cue-lift { 50% { transform: translateY(-5px); opacity: .95; } }
+
+/* The countdown is the middle portion of the shared watercolor. */
+.countdown-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+}
+.countdown-inner { position: relative; z-index: 1; }
+.countdown-inner .section-heading { font-size: clamp(43px, 5vw, 61px); }
+.countdown { display: flex; justify-content: center; align-items: flex-start; gap: clamp(10px, 3vw, 40px); margin-top: 35px; }
+.countdown-item { min-width: 62px; display: flex; flex-direction: column; align-items: center; }
+.countdown-number { font: 400 clamp(31px, 5.4vw, 57px)/1.2 var(--serif); font-variant-numeric: tabular-nums; }
+.countdown-label { margin-top: 8px; font-size: 10px; font-weight: 600; letter-spacing: .13em; }
+.countdown-colon { padding-top: 4px; font: 400 clamp(20px, 3vw, 31px)/1.4 var(--serif); }
+.countdown-note { margin: 28px 0 0; color: #65584f; font-size: 13px; }
+.calendar-button-wrapper { display: flex; justify-content: center; margin-top: 25px; padding-inline: 18px; }
+.calendar-btn { background: rgba(250,247,241,.9); border-color: #8c8177; color: var(--ink); }
+.calendar-btn:hover { background: #e8e1d9; }
+/* The story is the final portion of the same watercolor. */
+.story-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: clamp(32px, 6vw, 78px); }
+.story-image {
+  position: relative;
+  height: clamp(320px, 39vw, 490px);
+  overflow: hidden;
+  border-radius: 5px;
+  background: #e8e4dc;
+}
+.story-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 750ms ease-in-out;
+}
+.story-slide.is-active { opacity: 1; }
+.story-photo-controls {
+  position: absolute;
+  z-index: 3;
+  top: 45%;
+  right: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.story-photo-button {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  padding: 0 0 4px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 50%;
+  background: rgba(255,255,255,.20);
+  color: #fff;
+  font: 400 35px/1 var(--serif);
+  text-shadow: 0 1px 3px rgba(0,0,0,.28);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+  transition: background-color var(--ease);
+}
+.story-photo-button:hover { background: rgba(255,255,255,.40); }
+.story-photo-counter {
+  position: absolute;
+  right: 19px;
+  bottom: 15px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-shadow: 0 1px 4px #333;
+}
+.story-copy h3 { margin: 16px 0 20px; font: 400 clamp(31px, 3.6vw, 46px)/1.28 var(--serif); }
+.story-copy > p { margin: 0 0 16px; color: #645e58; font-size: 13px; line-height: 1.95; }
+.story-copy .button { margin-top: 14px; }
+.story-dialog {
+  width: min(700px, calc(100% - 28px));
+  max-width: none;
+  max-height: 88dvh;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 70px rgba(0,0,0,.24);
+}
+.story-dialog::backdrop { background: rgba(30,31,28,.68); backdrop-filter: blur(3px); }
+.dialog-content { position: relative; max-height: 88dvh; padding: clamp(28px, 5vw, 58px); overflow-y: auto; }
+.dialog-close { position: sticky; float: right; top: 0; z-index: 1; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); font-size: 25px; line-height: 1; }
+.dialog-content h2 { margin: 12px 0 24px; font: 400 clamp(34px, 5vw, 48px)/1.2 var(--serif); }
+.full-story p { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 2; white-space: pre-line; }
+.full-story .story-signoff { margin-top: 26px; color: var(--accent-dark); font: italic 400 23px/1.5 var(--serif); }
+.full-story p.is-typing::after { display: inline-block; width: 1px; height: 1em; margin-left: 2px; background: var(--accent-dark); content: ""; vertical-align: -.1em; animation: caret-blink 750ms steps(2,start) infinite; }
+@keyframes caret-blink { to { visibility: hidden; } }
+
+/* Ceremony and reception — show original background colors, without a fading overlay */
+.details-section {
+  background-color: #fdfdfb;
+  background-image: url("./images/weddingdetails-desktop.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.venue-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px; }
+.venue-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: rgba(252,250,246,.94); }
+.venue-image { position: relative; height: clamp(235px,26vw,305px); overflow: hidden; background: #ebe7e1; }
+.venue-image img { width: 100%; height: 100%; object-fit: cover; }
+.venue-image-label { position: absolute; bottom: 0; left: 0; padding: 10px 17px; background: #eee9e2; color: #4c4843; font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+.venue-content { display: flex; flex: 1; flex-direction: column; padding: clamp(24px,3.5vw,37px); }
+.venue-content h3 { margin: 0 0 12px; font: 400 clamp(25px,3vw,33px)/1.35 var(--serif); }
+/* Addresses occupy one visual line; long ones can be swiped horizontally on narrow screens. */
+.venue-address {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: clamp(11px, 1.05vw, 13px);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.venue-time { display: flex; align-items: baseline; gap: 12px; margin: 22px 0 24px; padding: 14px 0; border-block: 1px solid var(--line); font-size: 13px; }
+.venue-time .venue-time-label { font-size: 10px; font-weight: 700; letter-spacing: .13em; }
+.venue-time strong { font-weight: 500; white-space: nowrap; }
+.venue-time--ceremony { gap: 10px; }
+.venue-arrival-note { flex: 1; padding-left: 10px; border-left: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.5; }
+.venue-content .button { width: 100%; margin-top: auto; }
+
+/* Attire and palette — preserve full artwork, without image cropping */
+.dress-section { background: #fdfdfb; }
+.attire-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: clamp(16px,2.4vw,30px); }
+.attire-card { min-width: 0; margin: 0; background: transparent; }
+.attire-image-placeholder { width: 100%; }
+.attire-image-placeholder img { display: block; width: 100%; height: auto; object-fit: contain; }
+.attire-card-copy { padding: 15px 5px 0; text-align: center; }
+.attire-card-copy h3 { display: none; }
+.attire-card-copy p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.palette-block { margin-top: clamp(45px,6vw,70px); text-align: center; }
+.palette-heading h3 { margin: 0 0 22px; color: #ac3557; font: 400 clamp(40px, 5vw, 56px)/1.2 "Allura", cursive; text-shadow: 0 1px 10px #fffaf8; }
+.palette-image-placeholder { max-width: 1060px; margin: auto; }
+.palette-image-placeholder img { width: 100%; height: auto; object-fit: contain; }
+.attire-rules { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(30px,5vw,65px); margin-top: 42px; padding-top: 0; border-top: 0; }
+.rules-column h3 { display: flex; gap: 12px; align-items: center; margin: 0 0 19px; font: 400 26px/1.3 var(--serif); }
+.rules-column h3 span { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border: 1px solid #aaa69a; border-radius: 50%; font: 400 15px var(--sans); }
+.rules-column ul { margin: 0; padding-left: 19px; }
+.rules-column li { margin: 0 0 9px; padding-left: 2px; color: var(--muted); font-size: 12px; line-height: 1.85; }
+
+/* Wedding party — original Canva florals are kept full-strength and
+   unmodified. All text stays within the quieter central area of the image.
+   Desktop artwork: 1920x2400; mobile artwork: 1080x4200. */
+.party-section.section-padding {
+  background-color: var(--page);
+  background-image: url("./images/party-desktop.webp");
+  padding-bottom: clamp(165px, 18vw, 240px); /* keep the illustration close to the last attendant names */
+  background-position: center top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.party-section > .container {
+  width: min(1070px, calc(100% - clamp(64px, 11vw, 160px)));
+}
+.party-section .section-intro {
+  max-width: 580px;
+  margin-bottom: clamp(30px, 4vw, 48px);
+}
+.party-list {
+  width: min(100%, 865px);
+  margin-inline: auto;
+  color: #403c36;
+  text-align: center;
+}
+.party-group { padding-block: clamp(24px, 3vw, 38px); }
+.party-group--parents { padding-top: 0; }
+.party-group--little { padding-bottom: 0; }
+.party-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(18px, 4.2vw, 65px);
+  align-items: start;
+}
+.party-column { min-width: 0; }
+.party-script {
+  margin: 0 0 10px;
+  color: #433c35;
+  font: 400 clamp(33px, 3.2vw, 43px)/1.15 "Allura", "Brush Script MT", cursive;
+  text-wrap: balance;
+}
+.party-names {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #464038;
+  font: 300 clamp(14px, 1.25vw, 16px)/1.65 "Montserrat", var(--sans);
+  overflow-wrap: break-word;
+}
+.party-names li { margin: 0 0 3px; text-wrap: pretty; }
+.party-names li:last-child { margin-bottom: 0; }
+/* A light text shadow helps when a floral brushstroke reaches inward;
+   there is no white panel or image opacity over the background artwork. */
+.party-section .party-script,
+.party-section .party-names,
+.party-section .section-intro {
+  text-shadow: 0 1px 2px rgba(255,255,255,.92), 0 0 12px rgba(255,255,255,.5);
+}
+.party-group--sponsors > .party-script { margin-bottom: 19px; }
+/* Sponsors mirror the provided reference: two columns, center line, no wrapped names. */
+.party-pair--sponsors {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  column-gap: clamp(24px, 4vw, 58px);
+}
+.party-pair--sponsors .party-column:first-child { text-align: right; }
+.party-pair--sponsors .party-column:last-child { text-align: left; }
+.party-pair--sponsors .party-names { font-size: clamp(12px, 1.22vw, 16px); }
+.party-pair--sponsors .party-names li { white-space: nowrap; text-wrap: nowrap; }
+.party-pair--sponsors::before {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: calc(46.51% - 1px);
+  width: 1px;
+  background: rgba(69,61,51,.56);
+  content: "";
+  transform: translateX(-50%);
+}
+.party-symbols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 30px);
+  align-items: start;
+}
+.party-symbols .party-script { font-size: clamp(27px, 2.6vw, 37px); }
+.party-pair--children { row-gap: clamp(28px, 3.3vw, 45px); }
+.party-group--honor { padding-bottom: 16px; }
+.party-group--little { padding-top: 20px; }
+
+@media (max-width: 800px) {
+  .party-section.section-padding {
+    background-image: url("./images/party-mobile.webp");
+    padding-bottom: clamp(80px, 24vw, 120px);
+  }
+  .party-section > .container { width: calc(100% - clamp(56px, 10vw, 82px)); }
+  .party-section .section-intro { margin-bottom: 28px; }
+  .party-group { padding-block: 16px; }
+  .party-group--parents { padding-top: 0; }
+  .party-group--honor { padding-bottom: 14px; }
+  .party-group--little { padding-top: 15px; padding-bottom: 0; }
+  .party-pair { column-gap: clamp(13px, 3vw, 26px); }
+  .party-pair--sponsors { column-gap: clamp(18px, 3.5vw, 30px); }
+  .party-script { font-size: clamp(27px, 5vw, 35px); line-height: 1.14; }
+  .party-names { font-size: clamp(12.5px, 2.15vw, 14px); line-height: 1.65; }
+  .party-symbols .party-script { font-size: clamp(24px, 3.6vw, 32px); }
+  .party-symbols { gap: 12px; }
+  .party-pair--children { row-gap: 27px; }
+}
+@media (max-width: 600px) {
+  /* Long symbolic titles are stacked instead of squeezed into tiny columns. */
+  .party-symbols { grid-template-columns: 1fr; gap: 24px; }
+  .party-symbols .party-script { font-size: 30px; }
+  .party-pair--children .party-script,
+  .party-group--honor .party-script { font-size: clamp(23px, 6.2vw, 30px); }
+  .party-section .section-description { max-width: 280px; }
+  .party-section .section-heading { font-size: clamp(44px, 10vw, 55px); }
+  .party-pair--sponsors { column-gap: clamp(12px, 3vw, 19px); }
+  .party-pair--sponsors .party-names { font-size: clamp(9.5px, 2.68vw, 12.6px); letter-spacing: -.025em; line-height: 1.85; }
+  .party-group--parents .party-script { font-size: clamp(24px, 6.3vw, 31px); }
+  .party-section > .container { width: calc(100% - 30px); }
+  .party-pair--sponsors { margin-inline: 2px; }
+  .party-pair--children { row-gap: 26px; }
+}
+@media (max-width: 380px) {
+  .party-section > .container { width: calc(100% - 52px); }
+  .party-script { font-size: 26px; }
+  .party-names { font-size: 12.5px; }
+  .party-pair { column-gap: 12px; }
+  .party-pair--sponsors { column-gap: 12px; }
+  .party-symbols .party-script { font-size: 28px; }
+}
+
+/* RSVP introduction: one independent Canva background per screen size.
+   Canva desktop: 1920x1080; mobile: 1080x2340.
+   No overlay, crop, or tiling; design a clear center for readable text. */
+.rsvp-section {
+  background-color: var(--page);
+  background-image: url("./images/rsvp-desktop.webp");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.rsvp-layout { display: flex; flex-direction: column; align-items: center; gap: 35px; }
+.rsvp-copy { max-width: 750px; text-align: center; }
+.rsvp-copy .section-heading { font-size: clamp(44px, 6vw, 70px); }
+.rsvp-copy > p:not(.eyebrow, .rsvp-deadline) { max-width: 625px; margin: 15px auto 25px; color: var(--muted); font-size: 14px; }
+.rsvp-deadline { margin: 20px auto 10px; color: var(--accent-dark); font-size: 12px; font-weight: 700; }
+.rsvp-now-button { min-width: 180px; }
+.rsvp-now-button:disabled { opacity: .65; cursor: not-allowed; }
+
+/* Readability near the watercolor edges, without fading the artwork. */
+.details-section .section-intro,
+.rsvp-copy,
+.story-copy,
+.countdown-inner {
+  text-shadow: 0 1px 2px rgba(255,255,255,.85), 0 0 11px rgba(255,255,255,.55);
+}
+@media (max-width: 800px) {
+  .rsvp-copy { max-width: min(660px, calc(100% - 46px)); margin-inline: auto; }
+  .story-copy { padding-inline: clamp(8px, 2.8vw, 20px); }
+  .details-section .section-intro { max-width: min(560px, calc(100% - 28px)); }
+}
+@media (max-width: 600px) {
+  .rsvp-layout { gap: 27px; }
+  .rsvp-copy .section-heading { font-size: clamp(42px, 10vw, 59px); }
+  .rsvp-copy > p:not(.eyebrow, .rsvp-deadline) { font-size: 13px; line-height: 1.8; }
+  .section-intro { margin-bottom: 38px; }
+}
+
+/* FAQs — anchored watercolor corners that never stretch or repeat.
+   Each layer uses the same artwork: the top layer shows the leaves,
+   while the bottom layer keeps the flowers visible as answers expand. */
+.faq-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: 155px;
+  padding-bottom: 170px;
+  background: #f7f7f2;
+}
+.faq-section > .container {
+  position: relative;
+  z-index: 1;
+}
+.faq-section::before,
+.faq-section::after {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(247,247,242,.25), rgba(247,247,242,.25)),
+    url("./images/faq-desktop.webp");
+  background-size: 100% 100%, 100% auto;
+  background-repeat: no-repeat;
+}
+/* Leaves and butterfly stay at the top. */
+.faq-section::before {
+  top: 0;
+  height: clamp(300px, 31vw, 490px);
+  background-position: center, center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+}
+/* Mountains and flowers stay at the bottom, even when FAQs open. */
+.faq-section::after {
+  bottom: 0;
+  height: clamp(390px, 40vw, 610px);
+  background-position: center, center bottom;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 0%, #000 55%, transparent 100%);
+}
+.faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(35px,7vw,90px); align-items: start; }
+.faq-intro > p:not(.eyebrow) { margin: 20px 0; color: var(--muted); font-size: 13px; }
+.text-link { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid var(--accent-dark); color: var(--accent-dark); font-size: 11px; font-weight: 700; letter-spacing: .09em; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 23px 0; font-size: 13px; font-weight: 600; list-style: none; cursor: pointer; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-symbol { position: relative; width: 18px; height: 18px; flex: 0 0 18px; }
+.faq-symbol::before, .faq-symbol::after { position: absolute; top: 50%; left: 50%; width: 12px; height: 1px; background: var(--ink); content: ""; transform: translate(-50%,-50%); transition: transform 200ms ease; }
+.faq-symbol::after { transform: translate(-50%,-50%) rotate(90deg); }
+.faq-item[open] .faq-symbol::after { transform: translate(-50%,-50%) rotate(0deg); }
+.faq-answer { padding: 0 30px 22px 0; }
+.faq-answer p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.95; }
+
+/* Gentle scroll reveal; no content is hidden unless JS/IntersectionObserver is active */
+.js-motion .reveal { opacity: 0; transform: translateY(24px); transition: opacity 620ms ease, transform 620ms cubic-bezier(.2,.7,.3,1); }
+.js-motion .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Tablet and mobile */
+@media (max-width: 800px) {
+  .container { width: calc(100% - 36px); }
+  .navbar { min-height: 74px; }
+  .brand { width: 64px; height: 64px; }
+  .nav-drawer { width: min(82vw,400px); padding: clamp(105px,14vh,130px) 30px 35px; }
+  .opening-sections { background-image: url("./images/hero-mobile.webp"); }
+  .hero-content { width: 100%; justify-content: center; padding: 100px 22px 65px; }
+  .hero-invitation { width: 100%; }
+  .hero-name { font-size: clamp(66px, 12vw, 98px); }
+  .hero-and { font-size: clamp(21px, 3.7vw, 27px); }
+  .story-grid, .venue-grid, .faq-layout { grid-template-columns: 1fr; }
+  .story-grid { gap: 30px; }
+  .story-image { height: clamp(300px,75vw,480px); }
+  .venue-image { height: clamp(235px,50vw,330px); }
+  .attire-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .faq-layout { gap: 32px; }
+  .details-section {
+    background-image: url("./images/weddingdetails-mobile.webp");
+    background-position: center top;
+  }
+  .rsvp-section { background-image: url("./images/rsvp-mobile.webp"); }
+}
+@media (max-width: 600px) {
+  .section-padding { padding-block: 65px; }
+  .section-intro { margin-bottom: 33px; }
+  .menu-toggle { width: 42px; height: 42px; }
+  .nav-drawer { width: 82vw; }
+  .nav-links a { font-size: clamp(22px,6.1vw,28px); }
+  .hero-content { padding: 92px 17px 55px; }
+  .hero-eyebrow { font-size: clamp(10px, 2.6vw, 12px); letter-spacing: .12em; margin-bottom: 14px; }
+  .hero-name { font-size: clamp(67px, 19.5vw, 94px); }
+  .hero-names { margin-bottom: 12px; }
+  .hero-and { margin-block: -5px; font-size: clamp(21px, 5.6vw, 26px); }
+  .hero-tagline { font-size: clamp(14px, 3.7vw, 17px); line-height: 1.5; }
+  .hero-divider { margin-block: 17px 15px; }
+  .hero-date { font-size: 12px; letter-spacing: .14em; margin-bottom: 22px; }
+  .hero-scroll-cue { font-size: 9px; }
+  .countdown { gap: clamp(4px,1.7vw,9px); }
+  .countdown-item { min-width: 0; flex: 1; }
+  .countdown-number { font-size: clamp(26px,7vw,36px); }
+  .countdown-label { font-size: 8px; letter-spacing: .08em; }
+  .countdown-colon { font-size: 21px; }
+  .story-photo-controls { left: 11px; right: 11px; }
+  .story-photo-button { width: 41px; height: 41px; }
+  .attire-grid, .attire-rules { grid-template-columns: 1fr; }
+  .attire-grid { gap: 30px; }
+  .attire-card { width: min(100%,440px); margin-inline: auto; }
+  .attire-rules { gap: 27px; margin-top: 40px; }
+  .venue-content { padding: 25px 21px; }
+  .venue-time--ceremony { gap: 7px; }
+  .venue-arrival-note { padding-left: 7px; font-size: 9px; }
+  .venue-address { font-size: 12px; }
+  .dialog-content { padding: 28px 23px 35px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .js-motion .reveal { opacity: 1; transform: none; }
+}
+
+/* Mobile FAQs — portrait artwork, with decorative edges always in view.
+   Match the 800px breakpoint used by the stacked FAQ layout. */
+@media (max-width: 800px) {
+  .faq-section {
+    padding-top: clamp(145px, 39vw, 195px);
+    padding-bottom: clamp(235px, 70vw, 330px);
+  }
+  .faq-section::before,
+  .faq-section::after {
+    background-image:
+      linear-gradient(rgba(247,247,242,.20), rgba(247,247,242,.20)),
+      url("./images/faq-mobile.webp");
+  }
+  .faq-section::before {
+    height: clamp(235px, 66vw, 460px);
+  }
+  .faq-section::after {
+    height: clamp(335px, 100vw, 600px);
+  }
+}
+
+
+/* The RSVP button remains a normal link to the separate rsvp.html form. */
+.rsvp-now-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+
+/* ===============================================================
+   TAP-TO-OPEN INVITATION COVER — main page only (not RSVP).
+   Uses a dedicated wide collage on landscape/desktop screens and
+   the original vertical collage on portrait/mobile screens.
+   Blush color and opacity can be tuned in .invitation-gate::after.
+   =============================================================== */
+html.invitation-locked {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+html.invitation-active .site-header,
+html.invitation-active main {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.site-header, main { transition: opacity 900ms ease; }
+.invitation-gate {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  isolation: isolate;
+  overflow: hidden;
+  background: #d3b5b7;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 950ms cubic-bezier(.22,.61,.36,1), visibility 0s linear 950ms;
+}
+.invitation-cover-picture {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+.invitation-cover-art {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* Blush rose gradually deepens into a soft mauve for white-text contrast. */
+.invitation-gate::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(121, 58, 77, .38) 0%,
+    rgba(131, 63, 85, .48) 48%,
+    rgba(79, 37, 54, .64) 100%
+  );
+  pointer-events: none;
+}
+.invitation-open {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #fffdfb;
+  cursor: pointer;
+  text-align: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.invitation-open:focus-visible {
+  outline: 3px solid rgba(255,255,255,.95);
+  outline-offset: -10px;
+}
+.invitation-open-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-2vh);
+  opacity: 0;
+  animation: invitation-welcome 1100ms 150ms ease-out forwards;
+  text-shadow: 0 2px 18px rgba(31,15,21,.55);
+}
+.invitation-intro-monogram {
+  width: clamp(220px, 26vw, 335px);
+  height: auto;
+  margin-bottom: 13px;
+  filter: drop-shadow(0 2px 14px rgba(37,18,26,.42));
+}
+.invitation-play {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 3px 12px rgba(36,12,23,.4));
+  transition: transform 230ms ease, filter 230ms ease;
+  animation: invitation-pulse 3.2s 1.15s ease-in-out infinite;
+}
+.invitation-play svg { display: block; width: 76px; height: 76px; }
+.invitation-open:hover .invitation-play,
+.invitation-open:focus-visible .invitation-play { transform: scale(1.10); }
+.invitation-prompt {
+  display: block;
+  max-width: 90vw;
+  font-family: "Montserrat", "DM Sans", Arial, sans-serif;
+  font-size: clamp(10px, 1.25vw, 13px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .27em;
+  text-indent: .27em;
+  white-space: normal;
+}
+.invitation-gate.is-opening { opacity: 0; pointer-events: none; }
+@keyframes invitation-welcome {
+  from { opacity: 0; transform: translateY(calc(-2vh + 22px)); }
+  to   { opacity: 1; transform: translateY(-2vh); }
+}
+@keyframes invitation-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .70; }
+}
+@media (max-width: 800px) {
+  .invitation-intro-monogram { width: clamp(205px, 55vw, 275px); margin-bottom: 6px; }
+  .invitation-play { width: 70px; height: 70px; margin-bottom: 13px; }
+  .invitation-play svg { width: 67px; height: 67px; }
+  .invitation-prompt { font-size: 11px; letter-spacing: .20em; text-indent: .20em; }
+}
+@media (max-height: 530px) {
+  .invitation-intro-monogram { width: clamp(140px, 22vw, 180px); margin-bottom: 0; }
+  .invitation-play { width: 58px; height: 58px; margin-bottom: 6px; }
+  .invitation-play svg { width: 55px; height: 55px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .invitation-open-inner { animation: none; opacity: 1; transform: none; }
+  .invitation-play { animation: none; }
+  .invitation-gate, .site-header, main { transition: none !important; }
+}
+
+/* Compact screens: keep the typography centered and inside the viewport. */
+@media (max-height: 640px) and (min-width: 801px) {
+  .hero-content { padding-block: 75px 50px; }
+  .hero h1 { font-size: clamp(58px, 6.4vw, 84px); }
+  .hero-divider { margin-block: 17px; }
+  .hero-date { margin-bottom: 20px; }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: clamp(38px, 10.8vw, 45px); }
+  .hero-content { padding-inline: 12px; }
+  .hero-divider { margin-block: 19px; }
+  .hero-date { margin-bottom: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-invitation { opacity: 1; animation: none; transform: none; }
+}
+
+
+/* GRAVITY-STYLE SITE PETALS
+   Fixed to the visible viewport, NOT to document sections. JS moves them
+   only downwards with time-based gravity, regardless of scroll direction.
+   Keep above all main-site content but below the navigation and front cover. */
+.site-petals {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  width: 100%;
+  height: 100vh; /* fallback */
+  height: 100dvh;
+  overflow: hidden;
+  contain: layout paint style;
+  pointer-events: none;
+  user-select: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 700ms ease;
+}
+html.invitation-active .site-petals { opacity: 0; visibility: hidden; }
+.site-petal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--petal-size);
+  height: calc(var(--petal-size) * 1.3);
+  border-radius: 80% 12% 75% 20%;
+  background: radial-gradient(ellipse at 25% 25%, #fff8fa 0%, #f0b4c7 60%, #d991af 100%);
+  filter: drop-shadow(0 1px 1px rgba(131, 70, 82, .12));
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform;
+}
+.site-petal:nth-child(3n) {
+  background: radial-gradient(ellipse at 25% 25%, #fffef8, #f8dfb9 64%, #e7bea8);
+}
+.site-petal:nth-child(4n) {
+  background: radial-gradient(ellipse at 25% 25%, #fffafb, #ebc8e6 64%, #d1a0d0);
+}
+@media (max-height: 690px) and (max-width: 600px) {
+  .hero-content { padding-top: 72px; padding-bottom: 35px; }
+  .hero-eyebrow { margin-bottom: 8px; }
+  .hero-name { font-size: clamp(55px, 17vw, 72px); }
+  .hero-names { margin-bottom: 8px; }
+  .hero-tagline { font-size: 13px; }
+  .hero-divider { margin-block: 12px; }
+  .hero-date { margin-bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-petals { display: none; }
+}
+
+/* Countdown is shorter than the Hero and Story, with adequate room
+   for the timer. Keep these overrides after the general section rules. */
+.opening-sections > .countdown-section {
+  min-height: 75svh;
+  padding-block: 50px;
+}
+
+@media (max-width: 800px) {
+  /* Shorter, more balanced countdown on phones and tablets. The section
+     can still grow when accessibility text settings need extra space. */
+  .opening-sections > .countdown-section {
+    min-height: 46svh;
+    padding-block: 28px;
+  }
+
+  .opening-sections .countdown { margin-top: 20px; }
+  .opening-sections .countdown-note { margin-top: 16px; }
+  .opening-sections .calendar-button-wrapper { margin-top: 16px; }
+}
+
+/* Consistent script titles and accessible spacing at phone widths. */
+@media (max-width: 600px) {
+  .section-heading { font-size: clamp(43px, 10vw, 56px); line-height: 1.12; }
+  .countdown-inner .section-heading { font-size: clamp(42px, 9.8vw, 54px); }
+  .party-pair--sponsors::before { left: calc(46.51% - 1px); }
+}
