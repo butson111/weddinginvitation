@@ -545,7 +545,7 @@ html.invitation-active .hero-invitation { animation-play-state: paused; }
 }
 .party-pair--sponsors .party-column:first-child { text-align: right; }
 .party-pair--sponsors .party-column:last-child { text-align: left; }
-.party-pair--sponsors .party-names { font-size: clamp(12px, 1.22vw, 16px); }
+.party-pair--sponsors .party-names { font-size: clamp(14px, 1.25vw, 16px); }
 .party-pair--sponsors .party-names li { white-space: nowrap; text-wrap: nowrap; }
 .party-pair--sponsors::before {
   position: absolute;
